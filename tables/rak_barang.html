@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>rak_barang - neondb.public</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>neondb</b></a><span class="navbar-brand" style="padding-left: 0">.public</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>rak_barang</h1><p><span id="recordNumber">75</span> rows</p><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id">id</span></td>
+                                    <td>serial</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title='Automatically updated by the database'>√</td>
+                                    <td>nextval(&#39;rak_barang_id_seq&#39;::regclass)</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="barang.id_rak_barang references rak_barang.id via barang_id_rak_barang_rak_barang_id_fk"><a href='barang.html'>barang</a><span class='relatedKey'>.id_rak_barang</span></td>
+                                                <td class="constraint detail">barang_id_rak_barang_rak_barang_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="invoice_retur.id_rak_barang references rak_barang.id via invoice_retur_id_rak_barang_rak_barang_id_fk"><a href='invoice_retur.html'>invoice_retur</a><span class='relatedKey'>.id_rak_barang</span></td>
+                                                <td class="constraint detail">invoice_retur_id_rak_barang_rak_barang_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="rak_barang_level.id references rak_barang.id via rak_barang_level_id_rak_barang_id_fk"><a href='rak_barang_level.html'>rak_barang_level</a><span class='relatedKey'>.id</span></td>
+                                                <td class="constraint detail">rak_barang_level_id_rak_barang_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="stok_awal_barang.id_rak_barang references rak_barang.id via stok_awal_barang_id_rak_barang_rak_barang_id_fk"><a href='stok_awal_barang.html'>stok_awal_barang</a><span class='relatedKey'>.id_rak_barang</span></td>
+                                                <td class="constraint detail">stok_awal_barang_id_rak_barang_rak_barang_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="stok_barang.id_rak_barang references rak_barang.id via stok_barang_id_rak_barang_rak_barang_id_fk"><a href='stok_barang.html'>stok_barang</a><span class='relatedKey'>.id_rak_barang</span></td>
+                                                <td class="constraint detail">stok_barang_id_rak_barang_rak_barang_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="stok_opname.id_rak_barang references rak_barang.id via stok_opname_id_rak_barang_rak_barang_id_fk"><a href='stok_opname.html'>stok_opname</a><span class='relatedKey'>.id_rak_barang</span></td>
+                                                <td class="constraint detail">stok_opname_id_rak_barang_rak_barang_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="kode">kode</span></td>
+                                    <td>varchar</td>
+                                    <td>50</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="nama">nama</span></td>
+                                    <td>varchar</td>
+                                    <td>255</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id_gudang">id_gudang</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="rak_barang.id_gudang references gudang.id via rak_barang_id_gudang_gudang_id_fk"><a href='gudang.html'>gudang</a><span class='relatedKey'>.id</span></td>
+                                                <td class="constraint detail">rak_barang_id_gudang_gudang_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id_penanggung_jawab">id_penanggung_jawab</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="rak_barang.id_penanggung_jawab references pegawai.id via rak_barang_id_penanggung_jawab_pegawai_id_fk"><a href='pegawai.html'>pegawai</a><span class='relatedKey'>.id</span></td>
+                                                <td class="constraint detail">rak_barang_id_penanggung_jawab_pegawai_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="level">level</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>1</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 id="Indexes" class="box-title">Indexes</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="indexes_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Type</th>
+                                    <th>Sort</th>
+                                    <th>Column(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> rak_barang_pkey</td>
+                                    <td>Primary key</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>id</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                    <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>
+                                    <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="barang.html" target="_top" title="barang" alt="" coords="772,723,1052,1280">
+<area shape="rect" id="node2" href="pegawai.html" target="_top" title="pegawai" alt="" coords="5,1147,280,1352">
+<area shape="rect" id="node3" href="rak_barang.html" target="_top" title="rak_barang" alt="" coords="324,316,697,561">
+<area shape="rect" id="node5" href="gudang.html" target="_top" title="gudang" alt="" coords="21,407,264,553">
+<area shape="rect" id="node4" href="invoice_retur.html" target="_top" title="invoice_retur" alt="" coords="741,63,1083,385">
+<area shape="rect" id="node6" href="rak_barang_level.html" target="_top" title="rak_barang_level" alt="" coords="788,403,1036,525">
+<area shape="rect" id="node7" href="stok_awal_barang.html" target="_top" title="stok_awal_barang" alt="" coords="1139,308,1419,689">
+<area shape="rect" id="node8" href="stok_barang.html" target="_top" title="stok_barang" alt="" coords="1167,707,1390,1059">
+<area shape="rect" id="node9" href="stok_opname.html" target="_top" title="stok_opname" alt="" coords="1127,1293,1431,1587">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/rak_barang.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="acc_ap_faktur.html" target="_top" title="acc_ap_faktur" alt="" coords="1242,7065,1459,7153">
+<area shape="rect" id="node2" href="pegawai.html" target="_top" title="pegawai" alt="" coords="5,5613,185,5701">
+<area shape="rect" id="node3" href="supplier.html" target="_top" title="supplier" alt="" coords="771,4779,942,4867">
+<area shape="rect" id="node38" href="biaya_expedisi.html" target="_top" title="biaya_expedisi" alt="" coords="303,4779,530,4867">
+<area shape="rect" id="node4" href="acc_ar_faktur.html" target="_top" title="acc_ar_faktur" alt="" coords="1244,8503,1457,8591">
+<area shape="rect" id="node5" href="customer.html" target="_top" title="customer" alt="" coords="760,8335,953,8423">
+<area shape="rect" id="node14" href="area.html" target="_top" title="area" alt="" coords="336,7245,497,7333">
+<area shape="rect" id="node56" href="customer_jenis.html" target="_top" title="customer_jenis" alt="" coords="302,8524,531,8612">
+<area shape="rect" id="node57" href="customer_kategori.html" target="_top" title="customer_kategori" alt="" coords="284,8229,549,8317">
+<area shape="rect" id="node58" href="divisi_sales.html" target="_top" title="divisi_sales" alt="" coords="320,8335,513,8423">
+<area shape="rect" id="node6" href="acc_gl_trans.html" target="_top" title="acc_gl_trans" alt="" coords="315,9245,518,9333">
+<area shape="rect" id="node7" href="acc_kas.html" target="_top" title="acc_kas" alt="" coords="329,539,504,627">
+<area shape="rect" id="node8" href="account.html" target="_top" title="account" alt="" coords="10,149,181,237">
+<area shape="rect" id="node9" href="agama.html" target="_top" title="agama" alt="" coords="342,9351,491,9439">
+<area shape="rect" id="node10" href="alasan_penolakan.html" target="_top" title="alasan_penolakan" alt="" coords="2178,6324,2435,6412">
+<area shape="rect" id="node11" href="alasan_retur.html" target="_top" title="alasan_retur" alt="" coords="314,6084,519,6172">
+<area shape="rect" id="node12" href="ap_value.html" target="_top" title="ap_value" alt="" coords="1266,3332,1435,3420">
+<area shape="rect" id="node13" href="ar_value.html" target="_top" title="ar_value" alt="" coords="1268,8660,1433,8748">
+<area shape="rect" id="node15" href="barang.html" target="_top" title="barang" alt="" coords="1743,4379,1936,4467">
+<area shape="rect" id="node16" href="bentuk_persediaan.html" target="_top" title="bentuk_persediaan" alt="" coords="1216,4540,1485,4628">
+<area shape="rect" id="node17" href="brand.html" target="_top" title="brand" alt="" coords="344,4171,489,4259">
+<area shape="rect" id="node18" href="divisi.html" target="_top" title="divisi" alt="" coords="781,3991,933,4079">
+<area shape="rect" id="node19" href="grup.html" target="_top" title="grup" alt="" coords="1278,4645,1423,4733">
+<area shape="rect" id="node20" href="barang_kategori.html" target="_top" title="barang_kategori" alt="" coords="735,4132,978,4220">
+<area shape="rect" id="node21" href="logo_obat.html" target="_top" title="logo_obat" alt="" coords="1261,4224,1440,4312">
+<area shape="rect" id="node22" href="pabrik.html" target="_top" title="pabrik" alt="" coords="336,4433,497,4521">
+<area shape="rect" id="node23" href="rak_barang.html" target="_top" title="rak_barang" alt="" coords="1164,1808,1537,2053">
+<area shape="rect" id="node24" href="satuan.html" target="_top" title="satuan" alt="" coords="1275,3923,1426,4011">
+<area shape="rect" id="node25" href="suhu.html" target="_top" title="suhu" alt="" coords="1285,4329,1416,4417">
+<area shape="rect" id="node26" href="zat_aktif.html" target="_top" title="zat_aktif" alt="" coords="1267,4435,1434,4523">
+<area shape="rect" id="node60" href="golongan_barang.html" target="_top" title="golongan_barang" alt="" coords="291,4065,543,4153">
+<area shape="rect" id="node28" href="gudang.html" target="_top" title="gudang" alt="" coords="776,1359,937,1447">
+<area shape="rect" id="node27" href="barang_dekat_ed.html" target="_top" title="barang_dekat_ed" alt="" coords="1226,5139,1475,5227">
+<area shape="rect" id="node29" href="barang_dekat_ed_detail.html" target="_top" title="barang_dekat_ed_detail" alt="" coords="2600,4909,2915,4997">
+<area shape="rect" id="node30" href="stok_barang.html" target="_top" title="stok_barang" alt="" coords="2205,4771,2408,4859">
+<area shape="rect" id="node31" href="barang_harga.html" target="_top" title="barang_harga" alt="" coords="2198,5585,2415,5673">
+<area shape="rect" id="node32" href="barang_satuan.html" target="_top" title="barang_satuan" alt="" coords="2193,4061,2421,4149">
+<area shape="rect" id="node33" href="barang_supplier.html" target="_top" title="barang_supplier" alt="" coords="2186,2927,2427,3015">
+<area shape="rect" id="node34" href="ketentuan_retur.html" target="_top" title="ketentuan_retur" alt="" coords="1719,2857,1960,2945">
+<area shape="rect" id="node35" href="tipe_diskon.html" target="_top" title="tipe_diskon" alt="" coords="1742,2999,1937,3087">
+<area shape="rect" id="node36" href="berita_acara.html" target="_top" title="berita_acara" alt="" coords="3096,4375,3300,4463">
+<area shape="rect" id="node37" href="penerimaan_barang.html" target="_top" title="penerimaan_barang" alt="" coords="2619,4161,2896,4249">
+<area shape="rect" id="node42" href="ekspedisi.html" target="_top" title="ekspedisi" alt="" coords="329,6429,505,6517">
+<area shape="rect" id="node54" href="surat_pesanan.html" target="_top" title="surat_pesanan" alt="" coords="2194,4272,2419,4360">
+<area shape="rect" id="node39" href="biaya_transfer.html" target="_top" title="biaya_transfer" alt="" coords="745,1979,969,2067">
+<area shape="rect" id="node40" href="tipe_pembayaran.html" target="_top" title="tipe_pembayaran" alt="" coords="291,2376,543,2464">
+<area shape="rect" id="node41" href="bukti_barang_masuk.html" target="_top" title="bukti_barang_masuk" alt="" coords="1209,6125,1493,6213">
+<area shape="rect" id="node43" href="bukti_barang_masuk_detail.html" target="_top" title="bukti_barang_masuk_detail" alt="" coords="2583,4521,2932,4609">
+<area shape="rect" id="node44" href="cetakan.html" target="_top" title="cetakan" alt="" coords="320,9612,513,9700">
+<area shape="rect" id="node45" href="cetakan_logs.html" target="_top" title="cetakan_logs" alt="" coords="1245,9439,1456,9527">
+<area shape="rect" id="node46" href="cetakan_token.html" target="_top" title="cetakan_token" alt="" coords="744,9479,969,9567">
+<area shape="rect" id="node47" href="cetakan_password.html" target="_top" title="cetakan_password" alt="" coords="725,9584,988,9672">
+<area shape="rect" id="node48" href="cetakan_request.html" target="_top" title="cetakan_request" alt="" coords="734,9725,979,9813">
+<area shape="rect" id="node49" href="cetakan_setting.html" target="_top" title="cetakan_setting" alt="" coords="297,9785,536,9873">
+<area shape="rect" id="node50" href="checking.html" target="_top" title="checking" alt="" coords="2665,6916,2849,7004">
+<area shape="rect" id="node51" href="surat_jalan.html" target="_top" title="surat_jalan" alt="" coords="2211,7281,2402,7369">
+<area shape="rect" id="node86" href="kategori_surat_pesanan.html" target="_top" title="kategori_surat_pesanan" alt="" coords="259,7487,575,7575">
+<area shape="rect" id="node117" href="penawaran_tender.html" target="_top" title="penawaran_tender" alt="" coords="1218,7483,1483,7571">
+<area shape="rect" id="node145" href="sales_order.html" target="_top" title="sales_order" alt="" coords="1742,7385,1937,7473">
+<area shape="rect" id="node52" href="checking_detail.html" target="_top" title="checking_detail" alt="" coords="3081,4977,3315,5065">
+<area shape="rect" id="node53" href="checklist_penerimaan_barang.html" target="_top" title="checklist_penerimaan_barang" alt="" coords="2571,720,2944,808">
+<area shape="rect" id="node129" href="permintaan_penawaran.html" target="_top" title="permintaan_penawaran" alt="" coords="1683,3400,1996,3488">
+<area shape="rect" id="node55" href="coretax.html" target="_top" title="coretax" alt="" coords="336,9891,497,9979">
+<area shape="rect" id="node59" href="customer_kontak.html" target="_top" title="customer_kontak" alt="" coords="1225,8765,1476,8853">
+<area shape="rect" id="node61" href="ekspedisi_harga.html" target="_top" title="ekspedisi_harga" alt="" coords="736,6435,977,6523">
+<area shape="rect" id="node62" href="ekspedisi_resi.html" target="_top" title="ekspedisi_resi" alt="" coords="746,6608,967,6696">
+<area shape="rect" id="node63" href="estimasi_order.html" target="_top" title="estimasi_order" alt="" coords="1237,3709,1465,3797">
+<area shape="rect" id="node64" href="estimasi_order_detail.html" target="_top" title="estimasi_order_detail" alt="" coords="2161,3524,2453,3612">
+<area shape="rect" id="node65" href="program_pembelian.html" target="_top" title="program_pembelian" alt="" coords="278,3532,555,3620">
+<area shape="rect" id="node66" href="expense_type.html" target="_top" title="expense_type" alt="" coords="308,433,525,521">
+<area shape="rect" id="node67" href="faktur_pajak_pembelian.html" target="_top" title="faktur_pajak_pembelian" alt="" coords="1681,7169,1997,7257">
+<area shape="rect" id="node68" href="golongan_darah.html" target="_top" title="golongan_darah" alt="" coords="297,9996,537,10084">
+<area shape="rect" id="node69" href="hari_libur.html" target="_top" title="hari_libur" alt="" coords="769,10072,945,10160">
+<area shape="rect" id="node70" href="tipe_hari_libur.html" target="_top" title="tipe_hari_libur" alt="" coords="305,10153,528,10241">
+<area shape="rect" id="node71" href="initial_account.html" target="_top" title="initial_account" alt="" coords="304,328,529,416">
+<area shape="rect" id="node72" href="insentif_noo.html" target="_top" title="insentif_noo" alt="" coords="315,10259,518,10347">
+<area shape="rect" id="node73" href="insentif_salesman.html" target="_top" title="insentif_salesman" alt="" coords="727,10456,986,10544">
+<area shape="rect" id="node74" href="target_penjualan.html" target="_top" title="target_penjualan" alt="" coords="292,10364,541,10452">
+<area shape="rect" id="node75" href="invoice.html" target="_top" title="invoice" alt="" coords="1259,5349,1443,5437">
+<area shape="rect" id="node76" href="no_faktur.html" target="_top" title="no_faktur" alt="" coords="329,4988,505,5076">
+<area shape="rect" id="node77" href="invoice_detail.html" target="_top" title="invoice_detail" alt="" coords="2198,5197,2415,5285">
+<area shape="rect" id="node78" href="invoice_retur.html" target="_top" title="invoice_retur" alt="" coords="2201,5339,2412,5427">
+<area shape="rect" id="node79" href="pengajuan_retur_penjualan.html" target="_top" title="pengajuan_retur_penjualan" alt="" coords="1665,4729,2014,4817">
+<area shape="rect" id="node80" href="invoice_retur_detail.html" target="_top" title="invoice_retur_detail" alt="" coords="2619,4663,2895,4751">
+<area shape="rect" id="node81" href="invoice_retur_persetujuan.html" target="_top" title="invoice_retur_persetujuan" alt="" coords="2589,5269,2926,5357">
+<area shape="rect" id="node82" href="invoice_revisi.html" target="_top" title="invoice_revisi" alt="" coords="309,10553,524,10641">
+<area shape="rect" id="node83" href="jabatan.html" target="_top" title="jabatan" alt="" coords="338,868,495,956">
+<area shape="rect" id="node84" href="jenis_barang.html" target="_top" title="jenis_barang" alt="" coords="313,1025,521,1113">
+<area shape="rect" id="node85" href="jenis_identitas.html" target="_top" title="jenis_identitas" alt="" coords="304,1131,529,1219">
+<area shape="rect" id="node87" href="kelas_barang.html" target="_top" title="kelas_barang" alt="" coords="2201,4557,2413,4645">
+<area shape="rect" id="node88" href="ketentuan_retur_barang.html" target="_top" title="ketentuan_retur_barang" alt="" coords="2147,3156,2467,3244">
+<area shape="rect" id="node89" href="klaim_diskon_3.html" target="_top" title="klaim_diskon_3" alt="" coords="1724,5453,1955,5541">
+<area shape="rect" id="node90" href="klaim_loyalty.html" target="_top" title="klaim_loyalty" alt="" coords="1733,7979,1945,8067">
+<area shape="rect" id="node91" href="kontrak_loyalty.html" target="_top" title="kontrak_loyalty" alt="" coords="1233,8060,1468,8148">
+<area shape="rect" id="node96" href="program_loyalty.html" target="_top" title="program_loyalty" alt="" coords="736,6065,977,6153">
+<area shape="rect" id="node92" href="klaim_program_pembelian.html" target="_top" title="klaim_program_pembelian" alt="" coords="687,3561,1027,3649">
+<area shape="rect" id="node93" href="kode_e_report.html" target="_top" title="kode_e_report" alt="" coords="306,1236,527,1324">
+<area shape="rect" id="node94" href="kode_obat.html" target="_top" title="kode_obat" alt="" coords="325,1341,509,1429">
+<area shape="rect" id="node95" href="komisi_kolektor.html" target="_top" title="komisi_kolektor" alt="" coords="298,1447,535,1535">
+<area shape="rect" id="node97" href="mapping_customer.html" target="_top" title="mapping_customer" alt="" coords="1216,8871,1485,8959">
+<area shape="rect" id="node98" href="mapping_kolektor.html" target="_top" title="mapping_kolektor" alt="" coords="287,1692,546,1780">
+<area shape="rect" id="node99" href="mapping_salesman.html" target="_top" title="mapping_salesman" alt="" coords="282,2060,551,2148">
+<area shape="rect" id="node100" href="mapping_target_salesman.html" target="_top" title="mapping_target_salesman" alt="" coords="247,2165,586,2253">
+<area shape="rect" id="node101" href="media.html" target="_top" title="media" alt="" coords="345,2903,488,2991">
+<area shape="rect" id="node102" href="mv_refresh_control.html" target="_top" title="mv_refresh_control" alt="" coords="281,1903,552,1991">
+<area shape="rect" id="node103" href="noo.html" target="_top" title="noo" alt="" coords="349,1797,484,1885">
+<area shape="rect" id="node104" href="noo_detail.html" target="_top" title="noo_detail" alt="" coords="765,1744,949,1832">
+<area shape="rect" id="node105" href="nota_retur_pajak.html" target="_top" title="nota_retur_pajak" alt="" coords="2183,6007,2431,6095">
+<area shape="rect" id="node106" href="retur_pembelian.html" target="_top" title="retur_pembelian" alt="" coords="1717,5981,1961,6069">
+<area shape="rect" id="node107" href="nota_retur_pajak_detail.html" target="_top" title="nota_retur_pajak_detail" alt="" coords="2601,5796,2913,5884">
+<area shape="rect" id="node108" href="notification.html" target="_top" title="notification" alt="" coords="319,2271,515,2359">
+<area shape="rect" id="node109" href="ongkos.html" target="_top" title="ongkos" alt="" coords="340,6759,493,6847">
+<area shape="rect" id="node110" href="packing.html" target="_top" title="packing" alt="" coords="1259,7903,1443,7991">
+<area shape="rect" id="node111" href="payment_ap.html" target="_top" title="payment_ap" alt="" coords="1250,2376,1451,2464">
+<area shape="rect" id="node112" href="payment_ar.html" target="_top" title="payment_ar" alt="" coords="1251,3103,1450,3191">
+<area shape="rect" id="node113" href="proposal_ar.html" target="_top" title="proposal_ar" alt="" coords="758,7864,955,7952">
+<area shape="rect" id="node114" href="pegawai_account.html" target="_top" title="pegawai_account" alt="" coords="291,223,542,311">
+<area shape="rect" id="node115" href="pemindahan_barang.html" target="_top" title="pemindahan_barang" alt="" coords="1209,2271,1492,2359">
+<area shape="rect" id="node116" href="pemindahan_barang_detail.html" target="_top" title="pemindahan_barang_detail" alt="" coords="2584,4056,2931,4144">
+<area shape="rect" id="node118" href="penawaran_tender_detail.html" target="_top" title="penawaran_tender_detail" alt="" coords="2141,5092,2472,5180">
+<area shape="rect" id="node119" href="penerimaan_barang_detail.html" target="_top" title="penerimaan_barang_detail" alt="" coords="3027,3551,3369,3639">
+<area shape="rect" id="node120" href="penerimaan_pemindahan_barang.html" target="_top" title="penerimaan_pemindahan_barang" alt="" coords="1636,5348,2043,5436">
+<area shape="rect" id="node121" href="pengajuan_kenaikan_harga.html" target="_top" title="pengajuan_kenaikan_harga" alt="" coords="242,5401,591,5489">
+<area shape="rect" id="node122" href="pengajuan_kenaikan_harga_detail.html" target="_top" title="pengajuan_kenaikan_harga_detail" alt="" coords="2100,5691,2513,5779">
+<area shape="rect" id="node123" href="pengajuan_pembayaran_ekspedisi.html" target="_top" title="pengajuan_pembayaran_ekspedisi" alt="" coords="648,6713,1065,6801">
+<area shape="rect" id="node124" href="pengajuan_pembayaran_ekspedisi_detail.html" target="_top" title="pengajuan_pembayaran_ekspedisi_detail" alt="" coords="1109,6776,1592,6864">
+<area shape="rect" id="node125" href="pengajuan_perubahan_limit.html" target="_top" title="pengajuan_perubahan_limit" alt="" coords="1174,8976,1527,9064">
+<area shape="rect" id="node126" href="pengajuan_retur_penjualan_detail.html" target="_top" title="pengajuan_retur_penjualan_detail" alt="" coords="2099,4167,2514,4255">
+<area shape="rect" id="node127" href="penolakan_penawaran_tender.html" target="_top" title="penolakan_penawaran_tender" alt="" coords="1651,5804,2027,5892">
+<area shape="rect" id="node128" href="penolakan_penawaran_tender_detail.html" target="_top" title="penolakan_penawaran_tender_detail" alt="" coords="2087,5796,2527,5884">
+<area shape="rect" id="node130" href="permintaan_penawaran_detail.html" target="_top" title="permintaan_penawaran_detail" alt="" coords="2117,3400,2496,3488">
+<area shape="rect" id="node131" href="printer_device.html" target="_top" title="printer_device" alt="" coords="305,3044,528,3132">
+<area shape="rect" id="node132" href="printer_paper.html" target="_top" title="printer_paper" alt="" coords="749,3044,965,3132">
+<area shape="rect" id="node133" href="program_penjualan.html" target="_top" title="program_penjualan" alt="" coords="281,2481,553,2569">
+<area shape="rect" id="node134" href="program_reward.html" target="_top" title="program_reward" alt="" coords="295,2587,539,2675">
+<area shape="rect" id="node135" href="proposal_ap.html" target="_top" title="proposal_ap" alt="" coords="316,7744,517,7832">
+<area shape="rect" id="node136" href="proposal_ap_detail.html" target="_top" title="proposal_ap_detail" alt="" coords="1707,7779,1972,7867">
+<area shape="rect" id="node137" href="proposal_ar_detail.html" target="_top" title="proposal_ar_detail" alt="" coords="1708,8255,1971,8343">
+<area shape="rect" id="node138" href="rak_barang_level.html" target="_top" title="rak_barang_level" alt="" coords="1715,1887,1963,2009">
+<area shape="rect" id="node139" href="realisasi_stt.html" target="_top" title="realisasi_stt" alt="" coords="1739,5699,1940,5787">
+<area shape="rect" id="node140" href="surat_tanda_terima.html" target="_top" title="surat_tanda_terima" alt="" coords="1215,6519,1487,6607">
+<area shape="rect" id="node170" href="unit.html" target="_top" title="unit" alt="" coords="341,6864,493,6952">
+<area shape="rect" id="node141" href="rencana_kunjungan_salesman.html" target="_top" title="rencana_kunjungan_salesman" alt="" coords="229,2692,604,2780">
+<area shape="rect" id="node142" href="retur_konsinyasi.html" target="_top" title="retur_konsinyasi" alt="" coords="2635,7565,2880,7653">
+<area shape="rect" id="node143" href="retur_pembelian_detail.html" target="_top" title="retur_pembelian_detail" alt="" coords="2153,5901,2461,5989">
+<area shape="rect" id="node144" href="retur_pembelian_hpp.html" target="_top" title="retur_pembelian_hpp" alt="" coords="2613,5375,2902,5463">
+<area shape="rect" id="node146" href="sales_order_detail.html" target="_top" title="sales_order_detail" alt="" coords="2177,5480,2437,5568">
+<area shape="rect" id="node147" href="sales_order_hpp.html" target="_top" title="sales_order_hpp" alt="" coords="2637,5480,2878,5568">
+<area shape="rect" id="node148" href="sales_order_log.html" target="_top" title="sales_order_log" alt="" coords="299,2797,534,2885">
+<area shape="rect" id="node149" href="setting_persetujuan.html" target="_top" title="setting_persetujuan" alt="" coords="277,3149,556,3237">
+<area shape="rect" id="node150" href="status_kerja.html" target="_top" title="status_kerja" alt="" coords="315,3255,518,3343">
+<area shape="rect" id="node151" href="status_pernikahan.html" target="_top" title="status_pernikahan" alt="" coords="285,4276,549,4364">
+<area shape="rect" id="node152" href="stok_awal_barang.html" target="_top" title="stok_awal_barang" alt="" coords="2178,2469,2435,2557">
+<area shape="rect" id="node153" href="stok_harian.html" target="_top" title="stok_harian" alt="" coords="2209,2716,2405,2804">
+<area shape="rect" id="node154" href="stok_hold.html" target="_top" title="stok_hold" alt="" coords="2669,4768,2845,4856">
+<area shape="rect" id="node155" href="stok_opname.html" target="_top" title="stok_opname" alt="" coords="2201,987,2413,1075">
+<area shape="rect" id="node156" href="stok_opname_detail.html" target="_top" title="stok_opname_detail" alt="" coords="2168,2821,2445,2909">
+<area shape="rect" id="node157" href="stok_opname_invoice.html" target="_top" title="stok_opname_invoice" alt="" coords="1205,9223,1496,9311">
+<area shape="rect" id="node158" href="stok_opname_invoice_detail.html" target="_top" title="stok_opname_invoice_detail" alt="" coords="1662,9149,2017,9237">
+<area shape="rect" id="node159" href="tanda_terima_invoice.html" target="_top" title="tanda_terima_invoice" alt="" coords="1205,9081,1496,9169">
+<area shape="rect" id="node160" href="stok_opname_persetujuan.html" target="_top" title="stok_opname_persetujuan" alt="" coords="2588,984,2927,1072">
+<area shape="rect" id="node161" href="stok_opname_stok_barang.html" target="_top" title="stok_opname_stok_barang" alt="" coords="2587,3773,2928,3861">
+<area shape="rect" id="node162" href="stok_value.html" target="_top" title="stok_value" alt="" coords="2213,2575,2400,2663">
+<area shape="rect" id="node163" href="supplier_kontak.html" target="_top" title="supplier_kontak" alt="" coords="1231,5244,1470,5332">
+<area shape="rect" id="node164" href="surat_jalan_detail.html" target="_top" title="surat_jalan_detail" alt="" coords="2629,5051,2885,5139">
+<area shape="rect" id="node165" href="surat_penolakan_pembelian.html" target="_top" title="surat_penolakan_pembelian" alt="" coords="2579,3632,2935,3720">
+<area shape="rect" id="node166" href="surat_penolakan_pembelian_detail.html" target="_top" title="surat_penolakan_pembelian_detail" alt="" coords="2988,3877,3408,3965">
+<area shape="rect" id="node167" href="surat_penolakan_penjualan.html" target="_top" title="surat_penolakan_penjualan" alt="" coords="2132,8172,2481,8260">
+<area shape="rect" id="node168" href="surat_penolakan_penjualan_detail.html" target="_top" title="surat_penolakan_penjualan_detail" alt="" coords="2991,5480,3405,5568">
+<area shape="rect" id="node169" href="surat_pesanan_detail.html" target="_top" title="surat_pesanan_detail" alt="" coords="2612,3951,2903,4039">
+<area shape="rect" id="node171" href="surat_tanda_terima_detail.html" target="_top" title="surat_tanda_terima_detail" alt="" coords="2589,7671,2926,7759">
+<area shape="rect" id="node172" href="tipe_bpjs_kesehatan.html" target="_top" title="tipe_bpjs_kesehatan" alt="" coords="276,5611,557,5699">
+<area shape="rect" id="node173" href="tipe_kunjungan.html" target="_top" title="tipe_kunjungan" alt="" coords="300,5716,533,5804">
+<area shape="rect" id="node174" href="titip_faktur.html" target="_top" title="titip_faktur" alt="" coords="320,5821,513,5909">
+<area shape="rect" id="node175" href="top_per_kota.html" target="_top" title="top_per_kota" alt="" coords="312,5927,521,6015">
+<area shape="rect" id="node176" href="uang_muka_pembelian.html" target="_top" title="uang_muka_pembelian" alt="" coords="2605,615,2910,703">
+<area shape="rect" id="node177" href="verifikasi_tagihan.html" target="_top" title="verifikasi_tagihan" alt="" coords="1222,8397,1479,8485">
+<area shape="rect" id="node178" href="verifikasi_tagihan_detail.html" target="_top" title="verifikasi_tagihan_detail" alt="" coords="1679,8579,2000,8667">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/rak_barang.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="barang.html" target="_top" title="barang" alt="" coords="772,723,1052,1280">
+<area shape="rect" id="node2" href="pegawai.html" target="_top" title="pegawai" alt="" coords="5,1147,280,1352">
+<area shape="rect" id="node3" href="rak_barang.html" target="_top" title="rak_barang" alt="" coords="324,316,697,561">
+<area shape="rect" id="node5" href="gudang.html" target="_top" title="gudang" alt="" coords="21,407,264,553">
+<area shape="rect" id="node4" href="invoice_retur.html" target="_top" title="invoice_retur" alt="" coords="741,63,1083,385">
+<area shape="rect" id="node6" href="rak_barang_level.html" target="_top" title="rak_barang_level" alt="" coords="788,403,1036,525">
+<area shape="rect" id="node7" href="stok_awal_barang.html" target="_top" title="stok_awal_barang" alt="" coords="1139,308,1419,689">
+<area shape="rect" id="node8" href="stok_barang.html" target="_top" title="stok_barang" alt="" coords="1167,707,1390,1059">
+<area shape="rect" id="node9" href="stok_opname.html" target="_top" title="stok_opname" alt="" coords="1127,1293,1431,1587">
+</map>
+                                        <a name='diagram'><img id="oneimpliedDegreeImg" src="../diagrams/tables/rak_barang.implied1degrees.png" usemap="#oneDegreeRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="acc_ap_faktur.html" target="_top" title="acc_ap_faktur" alt="" coords="1731,5548,1948,5636">
+<area shape="rect" id="node2" href="pegawai.html" target="_top" title="pegawai" alt="" coords="5,5544,185,5632">
+<area shape="rect" id="node3" href="supplier.html" target="_top" title="supplier" alt="" coords="771,3419,942,3507">
+<area shape="rect" id="node4" href="acc_ar_faktur.html" target="_top" title="acc_ar_faktur" alt="" coords="1244,4000,1457,4088">
+<area shape="rect" id="node38" href="biaya_expedisi.html" target="_top" title="biaya_expedisi" alt="" coords="303,3367,530,3455">
+<area shape="rect" id="node5" href="customer.html" target="_top" title="customer" alt="" coords="760,6733,953,6821">
+<area shape="rect" id="node14" href="area.html" target="_top" title="area" alt="" coords="336,5329,497,5417">
+<area shape="rect" id="node56" href="customer_jenis.html" target="_top" title="customer_jenis" alt="" coords="302,6764,531,6852">
+<area shape="rect" id="node57" href="customer_kategori.html" target="_top" title="customer_kategori" alt="" coords="284,6869,549,6957">
+<area shape="rect" id="node58" href="divisi_sales.html" target="_top" title="divisi_sales" alt="" coords="320,6975,513,7063">
+<area shape="rect" id="node6" href="acc_gl_trans.html" target="_top" title="acc_gl_trans" alt="" coords="315,7680,518,7768">
+<area shape="rect" id="node7" href="acc_kas.html" target="_top" title="acc_kas" alt="" coords="329,447,504,535">
+<area shape="rect" id="node8" href="account.html" target="_top" title="account" alt="" coords="10,236,181,324">
+<area shape="rect" id="node9" href="agama.html" target="_top" title="agama" alt="" coords="342,7785,491,7873">
+<area shape="rect" id="node10" href="alasan_penolakan.html" target="_top" title="alasan_penolakan" alt="" coords="2178,3475,2435,3563">
+<area shape="rect" id="node11" href="alasan_retur.html" target="_top" title="alasan_retur" alt="" coords="314,4841,519,4929">
+<area shape="rect" id="node12" href="ap_value.html" target="_top" title="ap_value" alt="" coords="1266,1020,1435,1108">
+<area shape="rect" id="node13" href="ar_value.html" target="_top" title="ar_value" alt="" coords="1268,7019,1433,7107">
+<area shape="rect" id="node15" href="barang.html" target="_top" title="barang" alt="" coords="1743,3013,1936,3101">
+<area shape="rect" id="node16" href="bentuk_persediaan.html" target="_top" title="bentuk_persediaan" alt="" coords="1216,2699,1485,2787">
+<area shape="rect" id="node17" href="brand.html" target="_top" title="brand" alt="" coords="344,2657,489,2745">
+<area shape="rect" id="node18" href="divisi.html" target="_top" title="divisi" alt="" coords="781,2043,933,2131">
+<area shape="rect" id="node19" href="grup.html" target="_top" title="grup" alt="" coords="1278,2804,1423,2892">
+<area shape="rect" id="node20" href="barang_kategori.html" target="_top" title="barang_kategori" alt="" coords="735,2592,978,2680">
+<area shape="rect" id="node21" href="logo_obat.html" target="_top" title="logo_obat" alt="" coords="1261,2909,1440,2997">
+<area shape="rect" id="node22" href="pabrik.html" target="_top" title="pabrik" alt="" coords="336,2867,497,2955">
+<area shape="rect" id="node23" href="rak_barang.html" target="_top" title="rak_barang" alt="" coords="1164,2276,1537,2521">
+<area shape="rect" id="node24" href="satuan.html" target="_top" title="satuan" alt="" coords="1275,2171,1426,2259">
+<area shape="rect" id="node25" href="suhu.html" target="_top" title="suhu" alt="" coords="1285,3015,1416,3103">
+<area shape="rect" id="node26" href="zat_aktif.html" target="_top" title="zat_aktif" alt="" coords="1267,3120,1434,3208">
+<area shape="rect" id="node60" href="golongan_barang.html" target="_top" title="golongan_barang" alt="" coords="291,2257,543,2345">
+<area shape="rect" id="node28" href="gudang.html" target="_top" title="gudang" alt="" coords="776,1779,937,1867">
+<area shape="rect" id="node27" href="barang_dekat_ed.html" target="_top" title="barang_dekat_ed" alt="" coords="1226,4157,1475,4245">
+<area shape="rect" id="node29" href="barang_dekat_ed_detail.html" target="_top" title="barang_dekat_ed_detail" alt="" coords="2600,3721,2915,3809">
+<area shape="rect" id="node30" href="stok_barang.html" target="_top" title="stok_barang" alt="" coords="2205,3829,2408,3917">
+<area shape="rect" id="node31" href="barang_harga.html" target="_top" title="barang_harga" alt="" coords="2198,4945,2415,5033">
+<area shape="rect" id="node32" href="barang_satuan.html" target="_top" title="barang_satuan" alt="" coords="2193,2555,2421,2643">
+<area shape="rect" id="node33" href="barang_supplier.html" target="_top" title="barang_supplier" alt="" coords="2186,1779,2427,1867">
+<area shape="rect" id="node34" href="ketentuan_retur.html" target="_top" title="ketentuan_retur" alt="" coords="1719,2767,1960,2855">
+<area shape="rect" id="node35" href="tipe_diskon.html" target="_top" title="tipe_diskon" alt="" coords="1742,1673,1937,1761">
+<area shape="rect" id="node36" href="berita_acara.html" target="_top" title="berita_acara" alt="" coords="3096,1828,3300,1916">
+<area shape="rect" id="node37" href="penerimaan_barang.html" target="_top" title="penerimaan_barang" alt="" coords="2619,575,2896,663">
+<area shape="rect" id="node42" href="ekspedisi.html" target="_top" title="ekspedisi" alt="" coords="329,5984,505,6072">
+<area shape="rect" id="node54" href="surat_pesanan.html" target="_top" title="surat_pesanan" alt="" coords="2194,836,2419,924">
+<area shape="rect" id="node39" href="biaya_transfer.html" target="_top" title="biaya_transfer" alt="" coords="745,741,969,829">
+<area shape="rect" id="node40" href="tipe_pembayaran.html" target="_top" title="tipe_pembayaran" alt="" coords="291,1087,543,1175">
+<area shape="rect" id="node41" href="bukti_barang_masuk.html" target="_top" title="bukti_barang_masuk" alt="" coords="1209,4471,1493,4559">
+<area shape="rect" id="node43" href="bukti_barang_masuk_detail.html" target="_top" title="bukti_barang_masuk_detail" alt="" coords="2583,3156,2932,3244">
+<area shape="rect" id="node44" href="cetakan.html" target="_top" title="cetakan" alt="" coords="320,7995,513,8083">
+<area shape="rect" id="node45" href="cetakan_logs.html" target="_top" title="cetakan_logs" alt="" coords="1245,9397,1456,9485">
+<area shape="rect" id="node46" href="cetakan_token.html" target="_top" title="cetakan_token" alt="" coords="744,7929,969,8017">
+<area shape="rect" id="node47" href="cetakan_password.html" target="_top" title="cetakan_password" alt="" coords="725,8071,988,8159">
+<area shape="rect" id="node48" href="cetakan_request.html" target="_top" title="cetakan_request" alt="" coords="734,8176,979,8264">
+<area shape="rect" id="node49" href="cetakan_setting.html" target="_top" title="cetakan_setting" alt="" coords="297,8220,536,8308">
+<area shape="rect" id="node50" href="checking.html" target="_top" title="checking" alt="" coords="2665,4473,2849,4561">
+<area shape="rect" id="node51" href="surat_jalan.html" target="_top" title="surat_jalan" alt="" coords="2211,5245,2402,5333">
+<area shape="rect" id="node86" href="kategori_surat_pesanan.html" target="_top" title="kategori_surat_pesanan" alt="" coords="259,5224,575,5312">
+<area shape="rect" id="node117" href="penawaran_tender.html" target="_top" title="penawaran_tender" alt="" coords="1218,5504,1483,5592">
+<area shape="rect" id="node145" href="sales_order.html" target="_top" title="sales_order" alt="" coords="1742,5407,1937,5495">
+<area shape="rect" id="node52" href="checking_detail.html" target="_top" title="checking_detail" alt="" coords="3081,3895,3315,3983">
+<area shape="rect" id="node53" href="checklist_penerimaan_barang.html" target="_top" title="checklist_penerimaan_barang" alt="" coords="2571,935,2944,1023">
+<area shape="rect" id="node129" href="permintaan_penawaran.html" target="_top" title="permintaan_penawaran" alt="" coords="1683,1192,1996,1280">
+<area shape="rect" id="node55" href="coretax.html" target="_top" title="coretax" alt="" coords="336,8325,497,8413">
+<area shape="rect" id="node59" href="customer_kontak.html" target="_top" title="customer_kontak" alt="" coords="1225,7124,1476,7212">
+<area shape="rect" id="node61" href="ekspedisi_harga.html" target="_top" title="ekspedisi_harga" alt="" coords="736,6036,977,6124">
+<area shape="rect" id="node62" href="ekspedisi_resi.html" target="_top" title="ekspedisi_resi" alt="" coords="746,6209,967,6297">
+<area shape="rect" id="node63" href="estimasi_order.html" target="_top" title="estimasi_order" alt="" coords="1237,1849,1465,1937">
+<area shape="rect" id="node64" href="estimasi_order_detail.html" target="_top" title="estimasi_order_detail" alt="" coords="2161,2305,2453,2393">
+<area shape="rect" id="node65" href="program_pembelian.html" target="_top" title="program_pembelian" alt="" coords="278,2363,555,2451">
+<area shape="rect" id="node66" href="expense_type.html" target="_top" title="expense_type" alt="" coords="308,341,525,429">
+<area shape="rect" id="node67" href="faktur_pajak_pembelian.html" target="_top" title="faktur_pajak_pembelian" alt="" coords="1681,7419,1997,7507">
+<area shape="rect" id="node68" href="golongan_darah.html" target="_top" title="golongan_darah" alt="" coords="297,8431,537,8519">
+<area shape="rect" id="node69" href="hari_libur.html" target="_top" title="hari_libur" alt="" coords="769,8612,945,8700">
+<area shape="rect" id="node70" href="tipe_hari_libur.html" target="_top" title="tipe_hari_libur" alt="" coords="305,8536,528,8624">
+<area shape="rect" id="node71" href="initial_account.html" target="_top" title="initial_account" alt="" coords="304,236,529,324">
+<area shape="rect" id="node72" href="insentif_noo.html" target="_top" title="insentif_noo" alt="" coords="315,8693,518,8781">
+<area shape="rect" id="node73" href="insentif_salesman.html" target="_top" title="insentif_salesman" alt="" coords="727,8891,986,8979">
+<area shape="rect" id="node74" href="target_penjualan.html" target="_top" title="target_penjualan" alt="" coords="292,8799,541,8887">
+<area shape="rect" id="node75" href="invoice.html" target="_top" title="invoice" alt="" coords="1259,3491,1443,3579">
+<area shape="rect" id="node76" href="no_faktur.html" target="_top" title="no_faktur" alt="" coords="329,3177,505,3265">
+<area shape="rect" id="node77" href="invoice_detail.html" target="_top" title="invoice_detail" alt="" coords="2198,2765,2415,2853">
+<area shape="rect" id="node78" href="invoice_retur.html" target="_top" title="invoice_retur" alt="" coords="2201,3369,2412,3457">
+<area shape="rect" id="node79" href="pengajuan_retur_penjualan.html" target="_top" title="pengajuan_retur_penjualan" alt="" coords="1665,3575,2014,3663">
+<area shape="rect" id="node80" href="invoice_retur_detail.html" target="_top" title="invoice_retur_detail" alt="" coords="2619,3616,2895,3704">
+<area shape="rect" id="node81" href="invoice_retur_persetujuan.html" target="_top" title="invoice_retur_persetujuan" alt="" coords="2589,3367,2926,3455">
+<area shape="rect" id="node82" href="invoice_revisi.html" target="_top" title="invoice_revisi" alt="" coords="309,8988,524,9076">
+<area shape="rect" id="node83" href="jabatan.html" target="_top" title="jabatan" alt="" coords="338,9093,495,9181">
+<area shape="rect" id="node84" href="jenis_barang.html" target="_top" title="jenis_barang" alt="" coords="313,9199,521,9287">
+<area shape="rect" id="node85" href="jenis_identitas.html" target="_top" title="jenis_identitas" alt="" coords="304,9304,529,9392">
+<area shape="rect" id="node87" href="kelas_barang.html" target="_top" title="kelas_barang" alt="" coords="2201,3652,2413,3740">
+<area shape="rect" id="node88" href="ketentuan_retur_barang.html" target="_top" title="ketentuan_retur_barang" alt="" coords="2147,2660,2467,2748">
+<area shape="rect" id="node89" href="klaim_diskon_3.html" target="_top" title="klaim_diskon_3" alt="" coords="1724,4313,1955,4401">
+<area shape="rect" id="node90" href="klaim_loyalty.html" target="_top" title="klaim_loyalty" alt="" coords="1733,6937,1945,7025">
+<area shape="rect" id="node91" href="kontrak_loyalty.html" target="_top" title="kontrak_loyalty" alt="" coords="1233,6861,1468,6949">
+<area shape="rect" id="node96" href="program_loyalty.html" target="_top" title="program_loyalty" alt="" coords="736,6628,977,6716">
+<area shape="rect" id="node92" href="klaim_program_pembelian.html" target="_top" title="klaim_program_pembelian" alt="" coords="687,2733,1027,2821">
+<area shape="rect" id="node93" href="kode_e_report.html" target="_top" title="kode_e_report" alt="" coords="306,9409,527,9497">
+<area shape="rect" id="node94" href="kode_obat.html" target="_top" title="kode_obat" alt="" coords="325,9515,509,9603">
+<area shape="rect" id="node95" href="komisi_kolektor.html" target="_top" title="komisi_kolektor" alt="" coords="298,9620,535,9708">
+<area shape="rect" id="node97" href="mapping_customer.html" target="_top" title="mapping_customer" alt="" coords="1216,7229,1485,7317">
+<area shape="rect" id="node98" href="mapping_kolektor.html" target="_top" title="mapping_kolektor" alt="" coords="287,9725,546,9813">
+<area shape="rect" id="node99" href="mapping_salesman.html" target="_top" title="mapping_salesman" alt="" coords="282,9831,551,9919">
+<area shape="rect" id="node100" href="mapping_target_salesman.html" target="_top" title="mapping_target_salesman" alt="" coords="247,9936,586,10024">
+<area shape="rect" id="node101" href="media.html" target="_top" title="media" alt="" coords="345,10041,488,10129">
+<area shape="rect" id="node102" href="mv_refresh_control.html" target="_top" title="mv_refresh_control" alt="" coords="281,10147,552,10235">
+<area shape="rect" id="node103" href="noo.html" target="_top" title="noo" alt="" coords="349,10252,484,10340">
+<area shape="rect" id="node104" href="noo_detail.html" target="_top" title="noo_detail" alt="" coords="765,10285,949,10373">
+<area shape="rect" id="node105" href="nota_retur_pajak.html" target="_top" title="nota_retur_pajak" alt="" coords="2183,4555,2431,4643">
+<area shape="rect" id="node106" href="retur_pembelian.html" target="_top" title="retur_pembelian" alt="" coords="1717,4789,1961,4877">
+<area shape="rect" id="node107" href="nota_retur_pajak_detail.html" target="_top" title="nota_retur_pajak_detail" alt="" coords="2601,4260,2913,4348">
+<area shape="rect" id="node108" href="notification.html" target="_top" title="notification" alt="" coords="319,10393,515,10481">
+<area shape="rect" id="node109" href="ongkos.html" target="_top" title="ongkos" alt="" coords="340,6261,493,6349">
+<area shape="rect" id="node110" href="packing.html" target="_top" title="packing" alt="" coords="1259,6539,1443,6627">
+<area shape="rect" id="node111" href="payment_ap.html" target="_top" title="payment_ap" alt="" coords="1250,809,1451,897">
+<area shape="rect" id="node112" href="payment_ar.html" target="_top" title="payment_ar" alt="" coords="1251,915,1450,1003">
+<area shape="rect" id="node113" href="proposal_ar.html" target="_top" title="proposal_ar" alt="" coords="758,4144,955,4232">
+<area shape="rect" id="node114" href="pegawai_account.html" target="_top" title="pegawai_account" alt="" coords="291,131,542,219">
+<area shape="rect" id="node115" href="pemindahan_barang.html" target="_top" title="pemindahan_barang" alt="" coords="1209,3385,1492,3473">
+<area shape="rect" id="node116" href="pemindahan_barang_detail.html" target="_top" title="pemindahan_barang_detail" alt="" coords="2584,3261,2931,3349">
+<area shape="rect" id="node118" href="penawaran_tender_detail.html" target="_top" title="penawaran_tender_detail" alt="" coords="2141,3228,2472,3316">
+<area shape="rect" id="node119" href="penerimaan_barang_detail.html" target="_top" title="penerimaan_barang_detail" alt="" coords="3027,1340,3369,1428">
+<area shape="rect" id="node120" href="penerimaan_pemindahan_barang.html" target="_top" title="penerimaan_pemindahan_barang" alt="" coords="1636,4208,2043,4296">
+<area shape="rect" id="node121" href="pengajuan_kenaikan_harga.html" target="_top" title="pengajuan_kenaikan_harga" alt="" coords="242,5051,591,5139">
+<area shape="rect" id="node122" href="pengajuan_kenaikan_harga_detail.html" target="_top" title="pengajuan_kenaikan_harga_detail" alt="" coords="2100,5051,2513,5139">
+<area shape="rect" id="node123" href="pengajuan_pembayaran_ekspedisi.html" target="_top" title="pengajuan_pembayaran_ekspedisi" alt="" coords="648,6419,1065,6507">
+<area shape="rect" id="node124" href="pengajuan_pembayaran_ekspedisi_detail.html" target="_top" title="pengajuan_pembayaran_ekspedisi_detail" alt="" coords="1109,6425,1592,6513">
+<area shape="rect" id="node125" href="pengajuan_perubahan_limit.html" target="_top" title="pengajuan_perubahan_limit" alt="" coords="1174,7335,1527,7423">
+<area shape="rect" id="node126" href="pengajuan_retur_penjualan_detail.html" target="_top" title="pengajuan_retur_penjualan_detail" alt="" coords="2099,2871,2514,2959">
+<area shape="rect" id="node127" href="penolakan_penawaran_tender.html" target="_top" title="penolakan_penawaran_tender" alt="" coords="1651,4895,2027,4983">
+<area shape="rect" id="node128" href="penolakan_penawaran_tender_detail.html" target="_top" title="penolakan_penawaran_tender_detail" alt="" coords="2087,4256,2527,4344">
+<area shape="rect" id="node130" href="permintaan_penawaran_detail.html" target="_top" title="permintaan_penawaran_detail" alt="" coords="2117,1565,2496,1653">
+<area shape="rect" id="node131" href="printer_device.html" target="_top" title="printer_device" alt="" coords="305,10499,528,10587">
+<area shape="rect" id="node132" href="printer_paper.html" target="_top" title="printer_paper" alt="" coords="749,10499,965,10587">
+<area shape="rect" id="node133" href="program_penjualan.html" target="_top" title="program_penjualan" alt="" coords="281,10640,553,10728">
+<area shape="rect" id="node134" href="program_reward.html" target="_top" title="program_reward" alt="" coords="295,10745,539,10833">
+<area shape="rect" id="node135" href="proposal_ap.html" target="_top" title="proposal_ap" alt="" coords="316,5675,517,5763">
+<area shape="rect" id="node136" href="proposal_ap_detail.html" target="_top" title="proposal_ap_detail" alt="" coords="2174,5624,2439,5712">
+<area shape="rect" id="node137" href="proposal_ar_detail.html" target="_top" title="proposal_ar_detail" alt="" coords="1708,4579,1971,4667">
+<area shape="rect" id="node138" href="rak_barang_level.html" target="_top" title="rak_barang_level" alt="" coords="1715,2627,1963,2749">
+<area shape="rect" id="node139" href="realisasi_stt.html" target="_top" title="realisasi_stt" alt="" coords="1739,5741,1940,5829">
+<area shape="rect" id="node140" href="surat_tanda_terima.html" target="_top" title="surat_tanda_terima" alt="" coords="1215,6120,1487,6208">
+<area shape="rect" id="node170" href="unit.html" target="_top" title="unit" alt="" coords="341,6367,493,6455">
+<area shape="rect" id="node141" href="rencana_kunjungan_salesman.html" target="_top" title="rencana_kunjungan_salesman" alt="" coords="229,876,604,964">
+<area shape="rect" id="node142" href="retur_konsinyasi.html" target="_top" title="retur_konsinyasi" alt="" coords="2635,5788,2880,5876">
+<area shape="rect" id="node143" href="retur_pembelian_detail.html" target="_top" title="retur_pembelian_detail" alt="" coords="2153,4115,2461,4203">
+<area shape="rect" id="node144" href="retur_pembelian_hpp.html" target="_top" title="retur_pembelian_hpp" alt="" coords="2613,4149,2902,4237">
+<area shape="rect" id="node146" href="sales_order_detail.html" target="_top" title="sales_order_detail" alt="" coords="2177,4361,2437,4449">
+<area shape="rect" id="node147" href="sales_order_hpp.html" target="_top" title="sales_order_hpp" alt="" coords="2637,4004,2878,4092">
+<area shape="rect" id="node148" href="sales_order_log.html" target="_top" title="sales_order_log" alt="" coords="299,981,534,1069">
+<area shape="rect" id="node149" href="setting_persetujuan.html" target="_top" title="setting_persetujuan" alt="" coords="277,1316,556,1404">
+<area shape="rect" id="node150" href="status_kerja.html" target="_top" title="status_kerja" alt="" coords="315,1421,518,1509">
+<area shape="rect" id="node151" href="status_pernikahan.html" target="_top" title="status_pernikahan" alt="" coords="285,2972,549,3060">
+<area shape="rect" id="node152" href="stok_awal_barang.html" target="_top" title="stok_awal_barang" alt="" coords="2178,1884,2435,1972">
+<area shape="rect" id="node153" href="stok_harian.html" target="_top" title="stok_harian" alt="" coords="2209,2200,2405,2288">
+<area shape="rect" id="node154" href="stok_hold.html" target="_top" title="stok_hold" alt="" coords="2669,3827,2845,3915">
+<area shape="rect" id="node155" href="stok_opname.html" target="_top" title="stok_opname" alt="" coords="2201,1121,2413,1209">
+<area shape="rect" id="node156" href="stok_opname_detail.html" target="_top" title="stok_opname_detail" alt="" coords="2168,1989,2445,2077">
+<area shape="rect" id="node157" href="stok_opname_invoice.html" target="_top" title="stok_opname_invoice" alt="" coords="1205,7649,1496,7737">
+<area shape="rect" id="node158" href="stok_opname_invoice_detail.html" target="_top" title="stok_opname_invoice_detail" alt="" coords="1662,7576,2017,7664">
+<area shape="rect" id="node159" href="tanda_terima_invoice.html" target="_top" title="tanda_terima_invoice" alt="" coords="1205,7508,1496,7596">
+<area shape="rect" id="node160" href="stok_opname_persetujuan.html" target="_top" title="stok_opname_persetujuan" alt="" coords="2588,1119,2927,1207">
+<area shape="rect" id="node161" href="stok_opname_stok_barang.html" target="_top" title="stok_opname_stok_barang" alt="" coords="2587,1493,2928,1581">
+<area shape="rect" id="node162" href="stok_value.html" target="_top" title="stok_value" alt="" coords="2213,2095,2400,2183">
+<area shape="rect" id="node163" href="supplier_kontak.html" target="_top" title="supplier_kontak" alt="" coords="1231,7848,1470,7936">
+<area shape="rect" id="node164" href="surat_jalan_detail.html" target="_top" title="surat_jalan_detail" alt="" coords="2629,4368,2885,4456">
+<area shape="rect" id="node165" href="surat_penolakan_pembelian.html" target="_top" title="surat_penolakan_pembelian" alt="" coords="2579,807,2935,895">
+<area shape="rect" id="node166" href="surat_penolakan_pembelian_detail.html" target="_top" title="surat_penolakan_pembelian_detail" alt="" coords="2988,2699,3408,2787">
+<area shape="rect" id="node167" href="surat_penolakan_penjualan.html" target="_top" title="surat_penolakan_penjualan" alt="" coords="2132,6733,2481,6821">
+<area shape="rect" id="node168" href="surat_penolakan_penjualan_detail.html" target="_top" title="surat_penolakan_penjualan_detail" alt="" coords="2991,4004,3405,4092">
+<area shape="rect" id="node169" href="surat_pesanan_detail.html" target="_top" title="surat_pesanan_detail" alt="" coords="2612,2024,2903,2112">
+<area shape="rect" id="node171" href="surat_tanda_terima_detail.html" target="_top" title="surat_tanda_terima_detail" alt="" coords="2589,5893,2926,5981">
+<area shape="rect" id="node172" href="tipe_bpjs_kesehatan.html" target="_top" title="tipe_bpjs_kesehatan" alt="" coords="276,4300,557,4388">
+<area shape="rect" id="node173" href="tipe_kunjungan.html" target="_top" title="tipe_kunjungan" alt="" coords="300,4405,533,4493">
+<area shape="rect" id="node174" href="titip_faktur.html" target="_top" title="titip_faktur" alt="" coords="320,4511,513,4599">
+<area shape="rect" id="node175" href="top_per_kota.html" target="_top" title="top_per_kota" alt="" coords="312,4616,521,4704">
+<area shape="rect" id="node176" href="uang_muka_pembelian.html" target="_top" title="uang_muka_pembelian" alt="" coords="2605,680,2910,768">
+<area shape="rect" id="node177" href="verifikasi_tagihan.html" target="_top" title="verifikasi_tagihan" alt="" coords="1222,4700,1479,4788">
+<area shape="rect" id="node178" href="verifikasi_tagihan_detail.html" target="_top" title="verifikasi_tagihan_detail" alt="" coords="1679,4684,2000,4772">
+</map>
+                                        <a name='diagram'><img id="twoimpliedDegreeImg" src="../diagrams/tables/rak_barang.implied2degrees.png" usemap="#twoDegreesRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 7.0.2</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

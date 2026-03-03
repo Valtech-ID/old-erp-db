@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>invoice - neondb.public</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>neondb</b></a><span class="navbar-brand" style="padding-left: 0">.public</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>invoice</h1><p><span id="recordNumber">54971</span> rows</p><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id">id</span></td>
+                                    <td>serial</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title='Automatically updated by the database'>√</td>
+                                    <td>nextval(&#39;invoice_id_seq&#39;::regclass)</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="invoice_detail.id references invoice.id via invoice_detail_id_invoice_id_fk"><a href='invoice_detail.html'>invoice_detail</a><span class='relatedKey'>.id</span></td>
+                                                <td class="constraint detail">invoice_detail_id_invoice_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="invoice_persetujuan.id references invoice.id via invoice_persetujuan_id_invoice_id_fk"><a href='invoice_persetujuan.html'>invoice_persetujuan</a><span class='relatedKey'>.id</span></td>
+                                                <td class="constraint detail">invoice_persetujuan_id_invoice_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="invoice_retur.id_invoice references invoice.id via invoice_retur_id_invoice_invoice_id_fk"><a href='invoice_retur.html'>invoice_retur</a><span class='relatedKey'>.id_invoice</span></td>
+                                                <td class="constraint detail">invoice_retur_id_invoice_invoice_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="invoice_surat_jalan.id_invoice references invoice.id via invoice_surat_jalan_id_invoice_invoice_id_fk"><a href='invoice_surat_jalan.html'>invoice_surat_jalan</a><span class='relatedKey'>.id_invoice</span></td>
+                                                <td class="constraint detail">invoice_surat_jalan_id_invoice_invoice_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="klaim_loyalty_detail.id_invoice references invoice.id via klaim_loyalty_detail_id_invoice_invoice_id_fk"><a href='klaim_loyalty_detail.html'>klaim_loyalty_detail</a><span class='relatedKey'>.id_invoice</span></td>
+                                                <td class="constraint detail">klaim_loyalty_detail_id_invoice_invoice_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="pengajuan_retur_penjualan.id_invoice references invoice.id via pengajuan_retur_penjualan_id_invoice_invoice_id_fk"><a href='pengajuan_retur_penjualan.html'>pengajuan_retur_penjualan</a><span class='relatedKey'>.id_invoice</span></td>
+                                                <td class="constraint detail">pengajuan_retur_penjualan_id_invoice_invoice_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="nomor">nomor</span></td>
+                                    <td>varchar</td>
+                                    <td>2147483647</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="tanggal">tanggal</span></td>
+                                    <td>date</td>
+                                    <td>13</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="referensi">referensi</span></td>
+                                    <td>varchar</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="nomor_seri_pajak">nomor_seri_pajak</span></td>
+                                    <td>varchar</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="tanggal_jatuh_tempo">tanggal_jatuh_tempo</span></td>
+                                    <td>date</td>
+                                    <td>13</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id_customer">id_customer</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="invoice.id_customer references customer.id via invoice_id_customer_customer_id_fk"><a href='customer.html'>customer</a><span class='relatedKey'>.id</span></td>
+                                                <td class="constraint detail">invoice_id_customer_customer_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="top">top</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>0</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="subtotal">subtotal</span></td>
+                                    <td>numeric</td>
+                                    <td>0</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="total_diskon">total_diskon</span></td>
+                                    <td>numeric</td>
+                                    <td>0</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="dpp">dpp</span></td>
+                                    <td>numeric</td>
+                                    <td>0</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="is_ppn">is_ppn</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="total_ppn">total_ppn</span></td>
+                                    <td>numeric</td>
+                                    <td>0</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="is_pph_22">is_pph_22</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="total_pph_22">total_pph_22</span></td>
+                                    <td>numeric</td>
+                                    <td>0</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="is_materai">is_materai</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="materai">materai</span></td>
+                                    <td>numeric</td>
+                                    <td>0</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="grandtotal">grandtotal</span></td>
+                                    <td>numeric</td>
+                                    <td>18,2</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="catatan">catatan</span></td>
+                                    <td>varchar</td>
+                                    <td>2147483647</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="status">status</span></td>
+                                    <td>bpchar</td>
+                                    <td>1</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="created_by">created_by</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="invoice.created_by references pegawai.id via invoice_created_by_pegawai_id_fk"><a href='pegawai.html'>pegawai</a><span class='relatedKey'>.id</span></td>
+                                                <td class="constraint detail">invoice_created_by_pegawai_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="created_at">created_at</span></td>
+                                    <td>timestamp</td>
+                                    <td>29,6</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>now()</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="updated_by">updated_by</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="invoice.updated_by references pegawai.id via invoice_updated_by_pegawai_id_fk"><a href='pegawai.html'>pegawai</a><span class='relatedKey'>.id</span></td>
+                                                <td class="constraint detail">invoice_updated_by_pegawai_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="updated_at">updated_at</span></td>
+                                    <td>timestamp</td>
+                                    <td>29,6</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>now()</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id_tipe_transaksi">id_tipe_transaksi</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="invoice.id_tipe_transaksi references tipe_transaksi.id via invoice_id_tipe_transaksi_tipe_transaksi_id_fk"><a href='tipe_transaksi.html'>tipe_transaksi</a><span class='relatedKey'>.id</span></td>
+                                                <td class="constraint detail">invoice_id_tipe_transaksi_tipe_transaksi_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="revisian_ke">revisian_ke</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>0</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="id_salesman">id_salesman</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="deleted_by">deleted_by</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="deleted_at">deleted_at</span></td>
+                                    <td>timestamp</td>
+                                    <td>29,6</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="deleted_reason">deleted_reason</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>&#39;&#39;::text</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id_no_faktur">id_no_faktur</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="invoice.id_no_faktur references no_faktur.id via invoice_id_no_faktur_no_faktur_id_fk"><a href='no_faktur.html'>no_faktur</a><span class='relatedKey'>.id</span></td>
+                                                <td class="constraint detail">invoice_id_no_faktur_no_faktur_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="no_faktur">no_faktur</span></td>
+                                    <td>varchar</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="tanggal_terima_kembali">tanggal_terima_kembali</span></td>
+                                    <td>timestamptz</td>
+                                    <td>35,6</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="hpp">hpp</span></td>
+                                    <td>numeric</td>
+                                    <td>0</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="persen_ppn">persen_ppn</span></td>
+                                    <td>numeric</td>
+                                    <td>0</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="persen_pph_22">persen_pph_22</span></td>
+                                    <td>numeric</td>
+                                    <td>0</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="reff">reff</span></td>
+                                    <td>varchar</td>
+                                    <td>2147483647</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>&#39;REGULER&#39;::character varying</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="id_reff">id_reff</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="id_spv">id_spv</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="nama_salesman">nama_salesman</span></td>
+                                    <td>varchar</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="nama_spv">nama_spv</span></td>
+                                    <td>varchar</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="is_export_coretax">is_export_coretax</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>false</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="exported_by">exported_by</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="invoice.exported_by references pegawai.id via invoice_exported_by_pegawai_id_fk"><a href='pegawai.html'>pegawai</a><span class='relatedKey'>.id</span></td>
+                                                <td class="constraint detail">invoice_exported_by_pegawai_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="exported_at">exported_at</span></td>
+                                    <td>timestamp</td>
+                                    <td>29,6</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="waktu_serah_terima_1">waktu_serah_terima_1</span></td>
+                                    <td>timestamptz</td>
+                                    <td>35,6</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="waktu_serah_terima_2">waktu_serah_terima_2</span></td>
+                                    <td>timestamptz</td>
+                                    <td>35,6</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id_serah_terima_1">id_serah_terima_1</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="invoice.id_serah_terima_1 references pegawai.id via invoice_id_serah_terima_1_pegawai_id_fk"><a href='pegawai.html'>pegawai</a><span class='relatedKey'>.id</span></td>
+                                                <td class="constraint detail">invoice_id_serah_terima_1_pegawai_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id_serah_terima_2">id_serah_terima_2</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="invoice.id_serah_terima_2 references pegawai.id via invoice_id_serah_terima_2_pegawai_id_fk"><a href='pegawai.html'>pegawai</a><span class='relatedKey'>.id</span></td>
+                                                <td class="constraint detail">invoice_id_serah_terima_2_pegawai_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="tanggal_rencana_bayar">tanggal_rencana_bayar</span></td>
+                                    <td>date</td>
+                                    <td>13</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="kode_seri_pajak">kode_seri_pajak</span></td>
+                                    <td>varchar</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="tanggal_seri_pajak">tanggal_seri_pajak</span></td>
+                                    <td>date</td>
+                                    <td>13</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="tanggal_hitung_insentif">tanggal_hitung_insentif</span></td>
+                                    <td>date</td>
+                                    <td>13</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="is_salesman">is_salesman</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>true</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id_area">id_area</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="invoice.id_area references area.id via invoice_id_area_area_id_fk"><a href='area.html'>area</a><span class='relatedKey'>.id</span></td>
+                                                <td class="constraint detail">invoice_id_area_area_id_fk</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 id="Indexes" class="box-title">Indexes</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="indexes_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Type</th>
+                                    <th>Sort</th>
+                                    <th>Column(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> invoice_pkey</td>
+                                    <td>Primary key</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>id</td>
+                                </tr>
+                                <tr>
+                                    <td title='Indexed'>invoice_id_reff_index</td>
+                                    <td>Performance</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>id_reff</td>
+                                </tr>
+                                <tr>
+                                    <td class='uniqueKey' title='Unique Key'><i class='icon ion-key iconkey'></i> invoice_nomor_unique</td>
+                                    <td>Must be unique</td>
+                                    <td><span title='Ascending'>Asc</span></td>
+                                    <td>nomor</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                    <li class=""><a href="#oneimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">One implied</a></li>
+                                    <li class=""><a href="#twoimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="area.html" target="_top" title="area" alt="" coords="339,1848,538,2024">
+<area shape="rect" id="node2" href="pegawai.html" target="_top" title="pegawai" alt="" coords="5,1877,280,2083">
+<area shape="rect" id="node3" href="customer.html" target="_top" title="customer" alt="" coords="597,1803,984,2272">
+<area shape="rect" id="node4" href="invoice.html" target="_top" title="invoice" alt="" coords="1028,164,1483,1817">
+<area shape="rect" id="node5" href="no_faktur.html" target="_top" title="no_faktur" alt="" coords="324,1393,553,1569">
+<area shape="rect" id="node6" href="tipe_transaksi.html" target="_top" title="tipe_transaksi" alt="" coords="680,888,901,1005">
+<area shape="rect" id="node7" href="invoice_detail.html" target="_top" title="invoice_detail" alt="" coords="1573,515,1829,720">
+<area shape="rect" id="node8" href="invoice_persetujuan.html" target="_top" title="invoice_persetujuan" alt="" coords="1562,5,1841,152">
+<area shape="rect" id="node9" href="invoice_retur.html" target="_top" title="invoice_retur" alt="" coords="1920,1740,2261,2063">
+<area shape="rect" id="node10" href="pengajuan_retur_penjualan.html" target="_top" title="pengajuan_retur_penjualan" alt="" coords="1527,2152,1876,2475">
+<area shape="rect" id="node11" href="invoice_surat_jalan.html" target="_top" title="invoice_surat_jalan" alt="" coords="1567,205,1836,328">
+<area shape="rect" id="node12" href="klaim_loyalty_detail.html" target="_top" title="klaim_loyalty_detail" alt="" coords="1563,345,1839,497">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/invoice.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="acc_ap_faktur.html" target="_top" title="acc_ap_faktur" alt="" coords="1251,4188,1469,4276">
+<area shape="rect" id="node2" href="pegawai.html" target="_top" title="pegawai" alt="" coords="5,4743,185,4831">
+<area shape="rect" id="node3" href="supplier.html" target="_top" title="supplier" alt="" coords="776,3344,947,3432">
+<area shape="rect" id="node4" href="tipe_transaksi.html" target="_top" title="tipe_transaksi" alt="" coords="751,4180,972,4297">
+<area shape="rect" id="node28" href="biaya_expedisi.html" target="_top" title="biaya_expedisi" alt="" coords="303,3284,530,3372">
+<area shape="rect" id="node5" href="acc_ar_faktur.html" target="_top" title="acc_ar_faktur" alt="" coords="1253,4293,1467,4381">
+<area shape="rect" id="node6" href="customer.html" target="_top" title="customer" alt="" coords="765,4959,958,5047">
+<area shape="rect" id="node14" href="area.html" target="_top" title="area" alt="" coords="336,3059,497,3147">
+<area shape="rect" id="node44" href="customer_jenis.html" target="_top" title="customer_jenis" alt="" coords="302,5140,531,5228">
+<area shape="rect" id="node45" href="customer_kategori.html" target="_top" title="customer_kategori" alt="" coords="284,4845,549,4933">
+<area shape="rect" id="node46" href="divisi_sales.html" target="_top" title="divisi_sales" alt="" coords="320,4529,513,4617">
+<area shape="rect" id="node47" href="status_pajak.html" target="_top" title="status_pajak" alt="" coords="313,4951,520,5039">
+<area shape="rect" id="node7" href="acc_gl_trans.html" target="_top" title="acc_gl_trans" alt="" coords="315,7056,518,7144">
+<area shape="rect" id="node8" href="acc_kas.html" target="_top" title="acc_kas" alt="" coords="329,7161,504,7249">
+<area shape="rect" id="node9" href="agama.html" target="_top" title="agama" alt="" coords="342,7267,491,7355">
+<area shape="rect" id="node10" href="alasan_penolakan.html" target="_top" title="alasan_penolakan" alt="" coords="288,7372,545,7460">
+<area shape="rect" id="node11" href="alasan_retur.html" target="_top" title="alasan_retur" alt="" coords="314,3473,519,3561">
+<area shape="rect" id="node12" href="ap_value.html" target="_top" title="ap_value" alt="" coords="1275,613,1445,701">
+<area shape="rect" id="node13" href="ar_value.html" target="_top" title="ar_value" alt="" coords="1277,5541,1443,5629">
+<area shape="rect" id="node15" href="area_delivery.html" target="_top" title="area_delivery" alt="" coords="754,3063,969,3151">
+<area shape="rect" id="node16" href="area_rencana_kunjungan_salesman.html" target="_top" title="area_rencana_kunjungan_salesman" alt="" coords="648,2693,1075,2781">
+<area shape="rect" id="node17" href="rencana_kunjungan_salesman.html" target="_top" title="rencana_kunjungan_salesman" alt="" coords="229,2849,604,2937">
+<area shape="rect" id="node18" href="barang.html" target="_top" title="barang" alt="" coords="765,10405,958,10493">
+<area shape="rect" id="node19" href="pabrik.html" target="_top" title="pabrik" alt="" coords="336,10331,497,10419">
+<area shape="rect" id="node20" href="rak_barang.html" target="_top" title="rak_barang" alt="" coords="320,10823,513,10911">
+<area shape="rect" id="node21" href="satuan.html" target="_top" title="satuan" alt="" coords="341,10717,492,10805">
+<area shape="rect" id="node23" href="gudang.html" target="_top" title="gudang" alt="" coords="15,10733,176,10821">
+<area shape="rect" id="node22" href="barang_dekat_ed.html" target="_top" title="barang_dekat_ed" alt="" coords="1235,3239,1485,3327">
+<area shape="rect" id="node24" href="barang_harga.html" target="_top" title="barang_harga" alt="" coords="1251,10249,1469,10337">
+<area shape="rect" id="node25" href="barang_supplier.html" target="_top" title="barang_supplier" alt="" coords="1239,9421,1481,9509">
+<area shape="rect" id="node26" href="ketentuan_retur.html" target="_top" title="ketentuan_retur" alt="" coords="741,8131,982,8219">
+<area shape="rect" id="node27" href="tipe_diskon.html" target="_top" title="tipe_diskon" alt="" coords="764,7789,959,7877">
+<area shape="rect" id="node29" href="biaya_transfer.html" target="_top" title="biaya_transfer" alt="" coords="749,4451,973,4539">
+<area shape="rect" id="node30" href="tipe_pembayaran.html" target="_top" title="tipe_pembayaran" alt="" coords="291,3851,543,3939">
+<area shape="rect" id="node31" href="bukti_barang_masuk.html" target="_top" title="bukti_barang_masuk" alt="" coords="1218,3133,1502,3221">
+<area shape="rect" id="node32" href="ekspedisi.html" target="_top" title="ekspedisi" alt="" coords="329,873,505,961">
+<area shape="rect" id="node33" href="cetakan.html" target="_top" title="cetakan" alt="" coords="320,4740,513,4828">
+<area shape="rect" id="node34" href="cetakan_logs.html" target="_top" title="cetakan_logs" alt="" coords="1255,356,1465,444">
+<area shape="rect" id="node35" href="cetakan_token.html" target="_top" title="cetakan_token" alt="" coords="749,304,974,392">
+<area shape="rect" id="node36" href="cetakan_password.html" target="_top" title="cetakan_password" alt="" coords="730,6552,993,6640">
+<area shape="rect" id="node37" href="cetakan_request.html" target="_top" title="cetakan_request" alt="" coords="739,6967,984,7055">
+<area shape="rect" id="node38" href="cetakan_setting.html" target="_top" title="cetakan_setting" alt="" coords="297,7739,536,7827">
+<area shape="rect" id="node39" href="checking.html" target="_top" title="checking" alt="" coords="2662,2115,2846,2203">
+<area shape="rect" id="node40" href="surat_jalan.html" target="_top" title="surat_jalan" alt="" coords="2208,2539,2399,2627">
+<area shape="rect" id="node78" href="kategori_surat_pesanan.html" target="_top" title="kategori_surat_pesanan" alt="" coords="259,2263,575,2351">
+<area shape="rect" id="node110" href="penawaran_tender.html" target="_top" title="penawaran_tender" alt="" coords="1227,2664,1493,2752">
+<area shape="rect" id="node133" href="sales_order.html" target="_top" title="sales_order" alt="" coords="1736,2284,1931,2372">
+<area shape="rect" id="node41" href="checklist_penerimaan_barang.html" target="_top" title="checklist_penerimaan_barang" alt="" coords="2117,432,2490,520">
+<area shape="rect" id="node42" href="surat_pesanan.html" target="_top" title="surat_pesanan" alt="" coords="1721,1579,1946,1667">
+<area shape="rect" id="node120" href="permintaan_penawaran.html" target="_top" title="permintaan_penawaran" alt="" coords="1203,1624,1517,1712">
+<area shape="rect" id="node43" href="coretax.html" target="_top" title="coretax" alt="" coords="336,7844,497,7932">
+<area shape="rect" id="node48" href="customer_foto.html" target="_top" title="customer_foto" alt="" coords="1249,4980,1471,5068">
+<area shape="rect" id="node49" href="customer_kontak.html" target="_top" title="customer_kontak" alt="" coords="1235,5647,1485,5735">
+<area shape="rect" id="node50" href="customer_legalitas.html" target="_top" title="customer_legalitas" alt="" coords="1226,5085,1494,5173">
+<area shape="rect" id="node51" href="ekspedisi_harga.html" target="_top" title="ekspedisi_harga" alt="" coords="741,1097,982,1185">
+<area shape="rect" id="node52" href="ekspedisi_resi.html" target="_top" title="ekspedisi_resi" alt="" coords="751,1207,972,1295">
+<area shape="rect" id="node53" href="estimasi_order.html" target="_top" title="estimasi_order" alt="" coords="303,1729,531,1817">
+<area shape="rect" id="node54" href="expense_type.html" target="_top" title="expense_type" alt="" coords="308,7949,525,8037">
+<area shape="rect" id="node55" href="faktur_pajak_pembelian.html" target="_top" title="faktur_pajak_pembelian" alt="" coords="1675,2039,1991,2127">
+<area shape="rect" id="node56" href="golongan_barang.html" target="_top" title="golongan_barang" alt="" coords="291,8055,543,8143">
+<area shape="rect" id="node57" href="golongan_darah.html" target="_top" title="golongan_darah" alt="" coords="297,8160,537,8248">
+<area shape="rect" id="node58" href="hari_libur.html" target="_top" title="hari_libur" alt="" coords="773,8236,949,8324">
+<area shape="rect" id="node59" href="tipe_hari_libur.html" target="_top" title="tipe_hari_libur" alt="" coords="305,7633,528,7721">
+<area shape="rect" id="node60" href="initial_account.html" target="_top" title="initial_account" alt="" coords="304,8423,529,8511">
+<area shape="rect" id="node61" href="insentif_noo.html" target="_top" title="insentif_noo" alt="" coords="315,8528,518,8616">
+<area shape="rect" id="node62" href="insentif_salesman.html" target="_top" title="insentif_salesman" alt="" coords="732,8620,991,8708">
+<area shape="rect" id="node63" href="target_penjualan.html" target="_top" title="target_penjualan" alt="" coords="292,8317,541,8405">
+<area shape="rect" id="node64" href="invoice.html" target="_top" title="invoice" alt="" coords="1133,5888,1587,7541">
+<area shape="rect" id="node65" href="no_faktur.html" target="_top" title="no_faktur" alt="" coords="329,6029,505,6117">
+<area shape="rect" id="node66" href="invoice_detail.html" target="_top" title="invoice_detail" alt="" coords="1705,10315,1961,10520">
+<area shape="rect" id="node67" href="invoice_persetujuan.html" target="_top" title="invoice_persetujuan" alt="" coords="1694,6017,1973,6164">
+<area shape="rect" id="node68" href="invoice_retur.html" target="_top" title="invoice_retur" alt="" coords="2198,5981,2409,6069">
+<area shape="rect" id="node69" href="pengajuan_retur_penjualan.html" target="_top" title="pengajuan_retur_penjualan" alt="" coords="1659,5804,2008,5892">
+<area shape="rect" id="node70" href="invoice_retur_detail.html" target="_top" title="invoice_retur_detail" alt="" coords="2616,10652,2892,10740">
+<area shape="rect" id="node71" href="stok_barang.html" target="_top" title="stok_barang" alt="" coords="1259,10645,1461,10733">
+<area shape="rect" id="node72" href="invoice_retur_persetujuan.html" target="_top" title="invoice_retur_persetujuan" alt="" coords="2585,5979,2923,6067">
+<area shape="rect" id="node73" href="invoice_revisi.html" target="_top" title="invoice_revisi" alt="" coords="309,8823,524,8911">
+<area shape="rect" id="node74" href="invoice_surat_jalan.html" target="_top" title="invoice_surat_jalan" alt="" coords="2619,4341,2889,4464">
+<area shape="rect" id="node75" href="jabatan.html" target="_top" title="jabatan" alt="" coords="338,8928,495,9016">
+<area shape="rect" id="node76" href="jenis_barang.html" target="_top" title="jenis_barang" alt="" coords="313,9033,521,9121">
+<area shape="rect" id="node77" href="jenis_identitas.html" target="_top" title="jenis_identitas" alt="" coords="304,9139,529,9227">
+<area shape="rect" id="node79" href="klaim_diskon_3.html" target="_top" title="klaim_diskon_3" alt="" coords="1718,2905,1949,2993">
+<area shape="rect" id="node80" href="klaim_loyalty.html" target="_top" title="klaim_loyalty" alt="" coords="1727,5377,1939,5465">
+<area shape="rect" id="node81" href="kontrak_loyalty.html" target="_top" title="kontrak_loyalty" alt="" coords="1243,5436,1477,5524">
+<area shape="rect" id="node88" href="program_loyalty.html" target="_top" title="program_loyalty" alt="" coords="296,5349,537,5437">
+<area shape="rect" id="node82" href="klaim_loyalty_detail.html" target="_top" title="klaim_loyalty_detail" alt="" coords="2165,5475,2441,5627">
+<area shape="rect" id="node83" href="klaim_program_pembelian.html" target="_top" title="klaim_program_pembelian" alt="" coords="691,9215,1031,9303">
+<area shape="rect" id="node84" href="program_pembelian.html" target="_top" title="program_pembelian" alt="" coords="278,8717,555,8805">
+<area shape="rect" id="node85" href="kode_e_report.html" target="_top" title="kode_e_report" alt="" coords="306,9401,527,9489">
+<area shape="rect" id="node86" href="kode_obat.html" target="_top" title="kode_obat" alt="" coords="325,9507,509,9595">
+<area shape="rect" id="node87" href="komisi_kolektor.html" target="_top" title="komisi_kolektor" alt="" coords="298,9612,535,9700">
+<area shape="rect" id="node89" href="mapping_customer.html" target="_top" title="mapping_customer" alt="" coords="1225,7559,1495,7647">
+<area shape="rect" id="node90" href="mapping_kolektor.html" target="_top" title="mapping_kolektor" alt="" coords="287,4424,546,4512">
+<area shape="rect" id="node91" href="mapping_kolektor_area.html" target="_top" title="mapping_kolektor_area" alt="" coords="706,4748,1017,4836">
+<area shape="rect" id="node92" href="mapping_salesman.html" target="_top" title="mapping_salesman" alt="" coords="282,4635,551,4723">
+<area shape="rect" id="node93" href="mapping_salesman_area.html" target="_top" title="mapping_salesman_area" alt="" coords="701,4853,1022,4941">
+<area shape="rect" id="node94" href="mapping_target_salesman.html" target="_top" title="mapping_target_salesman" alt="" coords="247,9717,586,9805">
+<area shape="rect" id="node95" href="mapping_target_salesman_detail.html" target="_top" title="mapping_target_salesman_detail" alt="" coords="1158,5191,1562,5279">
+<area shape="rect" id="node96" href="media.html" target="_top" title="media" alt="" coords="345,9823,488,9911">
+<area shape="rect" id="node97" href="mv_refresh_control.html" target="_top" title="mv_refresh_control" alt="" coords="281,9928,552,10016">
+<area shape="rect" id="node98" href="noo.html" target="_top" title="noo" alt="" coords="349,9296,484,9384">
+<area shape="rect" id="node99" href="noo_detail.html" target="_top" title="noo_detail" alt="" coords="769,9643,953,9731">
+<area shape="rect" id="node100" href="nota_retur_pajak.html" target="_top" title="nota_retur_pajak" alt="" coords="2179,3133,2427,3221">
+<area shape="rect" id="node101" href="retur_pembelian.html" target="_top" title="retur_pembelian" alt="" coords="1711,3556,1955,3644">
+<area shape="rect" id="node102" href="notification.html" target="_top" title="notification" alt="" coords="319,10121,515,10209">
+<area shape="rect" id="node103" href="ongkos.html" target="_top" title="ongkos" alt="" coords="340,1399,493,1487">
+<area shape="rect" id="node104" href="packing.html" target="_top" title="packing" alt="" coords="1268,2455,1452,2543">
+<area shape="rect" id="node105" href="payment_ap.html" target="_top" title="payment_ap" alt="" coords="1259,3764,1461,3852">
+<area shape="rect" id="node106" href="payment_ar.html" target="_top" title="payment_ar" alt="" coords="1261,3869,1459,3957">
+<area shape="rect" id="node107" href="proposal_ar.html" target="_top" title="proposal_ar" alt="" coords="763,3605,960,3693">
+<area shape="rect" id="node108" href="pegawai_account.html" target="_top" title="pegawai_account" alt="" coords="291,5,542,93">
+<area shape="rect" id="node109" href="pemindahan_barang.html" target="_top" title="pemindahan_barang" alt="" coords="275,10540,558,10628">
+<area shape="rect" id="node111" href="penerimaan_barang.html" target="_top" title="penerimaan_barang" alt="" coords="2165,537,2442,625">
+<area shape="rect" id="node112" href="penerimaan_pemindahan_barang.html" target="_top" title="penerimaan_pemindahan_barang" alt="" coords="658,7448,1065,7536">
+<area shape="rect" id="node113" href="pengajuan_kenaikan_harga.html" target="_top" title="pengajuan_kenaikan_harga" alt="" coords="242,111,591,199">
+<area shape="rect" id="node114" href="pengajuan_pembayaran_ekspedisi.html" target="_top" title="pengajuan_pembayaran_ekspedisi" alt="" coords="653,753,1070,841">
+<area shape="rect" id="node115" href="pengajuan_pembayaran_ekspedisi_detail.html" target="_top" title="pengajuan_pembayaran_ekspedisi_detail" alt="" coords="1119,771,1601,859">
+<area shape="rect" id="node116" href="pengajuan_perubahan_limit.html" target="_top" title="pengajuan_perubahan_limit" alt="" coords="1183,7664,1537,7752">
+<area shape="rect" id="node117" href="pengajuan_retur_penjualan_detail.html" target="_top" title="pengajuan_retur_penjualan_detail" alt="" coords="2096,9737,2511,9825">
+<area shape="rect" id="node118" href="pengajuan_retur_penjualan_persetujuan.html" target="_top" title="pengajuan_retur_penjualan_persetujuan" alt="" coords="2065,5801,2541,5889">
+<area shape="rect" id="node119" href="penolakan_penawaran_tender.html" target="_top" title="penolakan_penawaran_tender" alt="" coords="1645,1933,2021,2021">
+<area shape="rect" id="node121" href="printer_device.html" target="_top" title="printer_device" alt="" coords="305,216,528,304">
+<area shape="rect" id="node122" href="printer_paper.html" target="_top" title="printer_paper" alt="" coords="753,199,969,287">
+<area shape="rect" id="node123" href="program_penjualan.html" target="_top" title="program_penjualan" alt="" coords="281,1031,553,1119">
+<area shape="rect" id="node124" href="program_reward.html" target="_top" title="program_reward" alt="" coords="295,1136,539,1224">
+<area shape="rect" id="node125" href="proposal_ap.html" target="_top" title="proposal_ap" alt="" coords="1259,4487,1461,4575">
+<area shape="rect" id="node126" href="proposal_ap_detail.html" target="_top" title="proposal_ap_detail" alt="" coords="1701,4573,1966,4661">
+<area shape="rect" id="node127" href="proposal_ar_detail.html" target="_top" title="proposal_ar_detail" alt="" coords="1702,4044,1965,4132">
+<area shape="rect" id="node128" href="realisasi_stt.html" target="_top" title="realisasi_stt" alt="" coords="1733,689,1934,777">
+<area shape="rect" id="node129" href="surat_tanda_terima.html" target="_top" title="surat_tanda_terima" alt="" coords="1224,952,1496,1040">
+<area shape="rect" id="node147" href="unit.html" target="_top" title="unit" alt="" coords="341,1504,493,1592">
+<area shape="rect" id="node130" href="rencana_kunjungan_salesman_detail.html" target="_top" title="rencana_kunjungan_salesman_detail" alt="" coords="1140,2277,1580,2365">
+<area shape="rect" id="node131" href="tipe_kunjungan.html" target="_top" title="tipe_kunjungan" alt="" coords="300,2452,533,2540">
+<area shape="rect" id="node132" href="retur_konsinyasi.html" target="_top" title="retur_konsinyasi" alt="" coords="2631,2740,2877,2828">
+<area shape="rect" id="node134" href="sales_order_log.html" target="_top" title="sales_order_log" alt="" coords="299,1293,534,1381">
+<area shape="rect" id="node135" href="setting_persetujuan.html" target="_top" title="setting_persetujuan" alt="" coords="277,5507,556,5595">
+<area shape="rect" id="node136" href="status_kerja.html" target="_top" title="status_kerja" alt="" coords="315,5716,518,5804">
+<area shape="rect" id="node137" href="status_pernikahan.html" target="_top" title="status_pernikahan" alt="" coords="285,6243,549,6331">
+<area shape="rect" id="node138" href="stok_awal_barang.html" target="_top" title="stok_awal_barang" alt="" coords="1231,9940,1489,10028">
+<area shape="rect" id="node139" href="stok_opname.html" target="_top" title="stok_opname" alt="" coords="1254,9835,1466,9923">
+<area shape="rect" id="node140" href="stok_opname_invoice.html" target="_top" title="stok_opname_invoice" alt="" coords="1215,3488,1505,3576">
+<area shape="rect" id="node141" href="stok_opname_invoice_area.html" target="_top" title="stok_opname_invoice_area" alt="" coords="1662,3064,2005,3152">
+<area shape="rect" id="node142" href="stok_opname_invoice_detail.html" target="_top" title="stok_opname_invoice_detail" alt="" coords="1656,4444,2011,4532">
+<area shape="rect" id="node143" href="tanda_terima_invoice.html" target="_top" title="tanda_terima_invoice" alt="" coords="1215,4592,1505,4680">
+<area shape="rect" id="node144" href="supplier_kontak.html" target="_top" title="supplier_kontak" alt="" coords="1241,9729,1479,9817">
+<area shape="rect" id="node145" href="surat_penolakan_pembelian.html" target="_top" title="surat_penolakan_pembelian" alt="" coords="2125,1676,2481,1764">
+<area shape="rect" id="node146" href="surat_penolakan_penjualan.html" target="_top" title="surat_penolakan_penjualan" alt="" coords="2129,2240,2478,2328">
+<area shape="rect" id="node148" href="surat_tanda_terima_detail.html" target="_top" title="surat_tanda_terima_detail" alt="" coords="2585,1776,2923,1864">
+<area shape="rect" id="node149" href="target_penjualan_detail.html" target="_top" title="target_penjualan_detail" alt="" coords="704,3831,1019,3919">
+<area shape="rect" id="node150" href="tipe_bpjs_kesehatan.html" target="_top" title="tipe_bpjs_kesehatan" alt="" coords="276,6500,557,6588">
+<area shape="rect" id="node151" href="titip_faktur.html" target="_top" title="titip_faktur" alt="" coords="320,6777,513,6865">
+<area shape="rect" id="node152" href="top_per_kota.html" target="_top" title="top_per_kota" alt="" coords="312,6883,521,6971">
+<area shape="rect" id="node153" href="uang_muka_pembelian.html" target="_top" title="uang_muka_pembelian" alt="" coords="2151,1881,2456,1969">
+<area shape="rect" id="node154" href="urut_kunjungan.html" target="_top" title="urut_kunjungan" alt="" coords="1241,4769,1479,4857">
+<area shape="rect" id="node155" href="urut_pengantaran.html" target="_top" title="urut_pengantaran" alt="" coords="1231,4875,1489,4963">
+<area shape="rect" id="node156" href="verifikasi_tagihan.html" target="_top" title="verifikasi_tagihan" alt="" coords="1231,3975,1489,4063">
+<area shape="rect" id="node157" href="verifikasi_tagihan_detail.html" target="_top" title="verifikasi_tagihan_detail" alt="" coords="1673,4339,1994,4427">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/invoice.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="oneimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagramImplied" name="oneDegreeRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="area.html" target="_top" title="area" alt="" coords="339,1848,538,2024">
+<area shape="rect" id="node2" href="pegawai.html" target="_top" title="pegawai" alt="" coords="5,1877,280,2083">
+<area shape="rect" id="node3" href="customer.html" target="_top" title="customer" alt="" coords="597,1803,984,2272">
+<area shape="rect" id="node4" href="invoice.html" target="_top" title="invoice" alt="" coords="1028,164,1483,1817">
+<area shape="rect" id="node5" href="no_faktur.html" target="_top" title="no_faktur" alt="" coords="324,1393,553,1569">
+<area shape="rect" id="node6" href="tipe_transaksi.html" target="_top" title="tipe_transaksi" alt="" coords="680,888,901,1005">
+<area shape="rect" id="node7" href="invoice_detail.html" target="_top" title="invoice_detail" alt="" coords="1573,515,1829,720">
+<area shape="rect" id="node8" href="invoice_persetujuan.html" target="_top" title="invoice_persetujuan" alt="" coords="1562,5,1841,152">
+<area shape="rect" id="node9" href="invoice_retur.html" target="_top" title="invoice_retur" alt="" coords="1920,1740,2261,2063">
+<area shape="rect" id="node10" href="pengajuan_retur_penjualan.html" target="_top" title="pengajuan_retur_penjualan" alt="" coords="1527,2152,1876,2475">
+<area shape="rect" id="node11" href="invoice_surat_jalan.html" target="_top" title="invoice_surat_jalan" alt="" coords="1567,205,1836,328">
+<area shape="rect" id="node12" href="klaim_loyalty_detail.html" target="_top" title="klaim_loyalty_detail" alt="" coords="1563,345,1839,497">
+</map>
+                                        <a name='diagram'><img id="oneimpliedDegreeImg" src="../diagrams/tables/invoice.implied1degrees.png" usemap="#oneDegreeRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twoimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagramImplied" name="twoDegreesRelationshipsDiagramImplied">
+<area shape="rect" id="node1" href="acc_ap_faktur.html" target="_top" title="acc_ap_faktur" alt="" coords="1725,5811,1942,5899">
+<area shape="rect" id="node2" href="pegawai.html" target="_top" title="pegawai" alt="" coords="5,5603,185,5691">
+<area shape="rect" id="node3" href="supplier.html" target="_top" title="supplier" alt="" coords="776,2012,947,2100">
+<area shape="rect" id="node4" href="tipe_transaksi.html" target="_top" title="tipe_transaksi" alt="" coords="751,4939,972,5056">
+<area shape="rect" id="node5" href="acc_ar_faktur.html" target="_top" title="acc_ar_faktur" alt="" coords="1253,4416,1467,4504">
+<area shape="rect" id="node28" href="biaya_expedisi.html" target="_top" title="biaya_expedisi" alt="" coords="303,2159,530,2247">
+<area shape="rect" id="node6" href="customer.html" target="_top" title="customer" alt="" coords="765,8254,958,8342">
+<area shape="rect" id="node14" href="area.html" target="_top" title="area" alt="" coords="336,7028,497,7116">
+<area shape="rect" id="node44" href="customer_jenis.html" target="_top" title="customer_jenis" alt="" coords="302,8676,531,8764">
+<area shape="rect" id="node45" href="customer_kategori.html" target="_top" title="customer_kategori" alt="" coords="284,8782,549,8870">
+<area shape="rect" id="node46" href="divisi_sales.html" target="_top" title="divisi_sales" alt="" coords="320,4744,513,4832">
+<area shape="rect" id="node47" href="status_pajak.html" target="_top" title="status_pajak" alt="" coords="313,8171,520,8259">
+<area shape="rect" id="node7" href="acc_gl_trans.html" target="_top" title="acc_gl_trans" alt="" coords="315,3210,518,3298">
+<area shape="rect" id="node8" href="acc_kas.html" target="_top" title="acc_kas" alt="" coords="329,3315,504,3403">
+<area shape="rect" id="node9" href="agama.html" target="_top" title="agama" alt="" coords="342,3420,491,3508">
+<area shape="rect" id="node10" href="alasan_penolakan.html" target="_top" title="alasan_penolakan" alt="" coords="288,3526,545,3614">
+<area shape="rect" id="node11" href="alasan_retur.html" target="_top" title="alasan_retur" alt="" coords="314,624,519,712">
+<area shape="rect" id="node12" href="ap_value.html" target="_top" title="ap_value" alt="" coords="1275,1570,1445,1658">
+<area shape="rect" id="node13" href="ar_value.html" target="_top" title="ar_value" alt="" coords="1277,6844,1443,6932">
+<area shape="rect" id="node15" href="area_delivery.html" target="_top" title="area_delivery" alt="" coords="754,7074,969,7162">
+<area shape="rect" id="node16" href="area_rencana_kunjungan_salesman.html" target="_top" title="area_rencana_kunjungan_salesman" alt="" coords="648,9062,1075,9150">
+<area shape="rect" id="node17" href="rencana_kunjungan_salesman.html" target="_top" title="rencana_kunjungan_salesman" alt="" coords="229,9271,604,9359">
+<area shape="rect" id="node18" href="barang.html" target="_top" title="barang" alt="" coords="765,1252,958,1340">
+<area shape="rect" id="node19" href="pabrik.html" target="_top" title="pabrik" alt="" coords="336,1163,497,1251">
+<area shape="rect" id="node20" href="rak_barang.html" target="_top" title="rak_barang" alt="" coords="320,206,513,294">
+<area shape="rect" id="node21" href="satuan.html" target="_top" title="satuan" alt="" coords="341,1268,492,1356">
+<area shape="rect" id="node23" href="gudang.html" target="_top" title="gudang" alt="" coords="15,170,176,258">
+<area shape="rect" id="node22" href="barang_dekat_ed.html" target="_top" title="barang_dekat_ed" alt="" coords="1235,1075,1485,1163">
+<area shape="rect" id="node24" href="barang_harga.html" target="_top" title="barang_harga" alt="" coords="1251,2431,1469,2519">
+<area shape="rect" id="node25" href="barang_supplier.html" target="_top" title="barang_supplier" alt="" coords="1239,2138,1481,2226">
+<area shape="rect" id="node26" href="ketentuan_retur.html" target="_top" title="ketentuan_retur" alt="" coords="741,2138,982,2226">
+<area shape="rect" id="node27" href="tipe_diskon.html" target="_top" title="tipe_diskon" alt="" coords="764,2244,959,2332">
+<area shape="rect" id="node29" href="biaya_transfer.html" target="_top" title="biaya_transfer" alt="" coords="749,3052,973,3140">
+<area shape="rect" id="node30" href="tipe_pembayaran.html" target="_top" title="tipe_pembayaran" alt="" coords="291,6630,543,6718">
+<area shape="rect" id="node31" href="bukti_barang_masuk.html" target="_top" title="bukti_barang_masuk" alt="" coords="1218,1816,1502,1904">
+<area shape="rect" id="node32" href="ekspedisi.html" target="_top" title="ekspedisi" alt="" coords="329,4955,505,5043">
+<area shape="rect" id="node33" href="cetakan.html" target="_top" title="cetakan" alt="" coords="320,10452,513,10540">
+<area shape="rect" id="node34" href="cetakan_logs.html" target="_top" title="cetakan_logs" alt="" coords="1255,10851,1465,10939">
+<area shape="rect" id="node35" href="cetakan_token.html" target="_top" title="cetakan_token" alt="" coords="749,10814,974,10902">
+<area shape="rect" id="node36" href="cetakan_password.html" target="_top" title="cetakan_password" alt="" coords="730,9694,993,9782">
+<area shape="rect" id="node37" href="cetakan_request.html" target="_top" title="cetakan_request" alt="" coords="739,10190,984,10278">
+<area shape="rect" id="node38" href="cetakan_setting.html" target="_top" title="cetakan_setting" alt="" coords="297,4850,536,4938">
+<area shape="rect" id="node39" href="checking.html" target="_top" title="checking" alt="" coords="2662,4859,2846,4947">
+<area shape="rect" id="node40" href="surat_jalan.html" target="_top" title="surat_jalan" alt="" coords="2208,5915,2399,6003">
+<area shape="rect" id="node78" href="kategori_surat_pesanan.html" target="_top" title="kategori_surat_pesanan" alt="" coords="259,5774,575,5862">
+<area shape="rect" id="node110" href="penawaran_tender.html" target="_top" title="penawaran_tender" alt="" coords="1227,6550,1493,6638">
+<area shape="rect" id="node133" href="sales_order.html" target="_top" title="sales_order" alt="" coords="1736,6642,1931,6730">
+<area shape="rect" id="node41" href="checklist_penerimaan_barang.html" target="_top" title="checklist_penerimaan_barang" alt="" coords="2117,9311,2490,9399">
+<area shape="rect" id="node42" href="surat_pesanan.html" target="_top" title="surat_pesanan" alt="" coords="1721,6256,1946,6344">
+<area shape="rect" id="node120" href="permintaan_penawaran.html" target="_top" title="permintaan_penawaran" alt="" coords="1203,6444,1517,6532">
+<area shape="rect" id="node43" href="coretax.html" target="_top" title="coretax" alt="" coords="336,5286,497,5374">
+<area shape="rect" id="node48" href="customer_foto.html" target="_top" title="customer_foto" alt="" coords="1249,8708,1471,8796">
+<area shape="rect" id="node49" href="customer_kontak.html" target="_top" title="customer_kontak" alt="" coords="1235,7775,1485,7863">
+<area shape="rect" id="node50" href="customer_legalitas.html" target="_top" title="customer_legalitas" alt="" coords="1226,8287,1494,8375">
+<area shape="rect" id="node51" href="ekspedisi_harga.html" target="_top" title="ekspedisi_harga" alt="" coords="741,5287,982,5375">
+<area shape="rect" id="node52" href="ekspedisi_resi.html" target="_top" title="ekspedisi_resi" alt="" coords="751,5496,972,5584">
+<area shape="rect" id="node53" href="estimasi_order.html" target="_top" title="estimasi_order" alt="" coords="303,6735,531,6823">
+<area shape="rect" id="node54" href="expense_type.html" target="_top" title="expense_type" alt="" coords="308,5931,525,6019">
+<area shape="rect" id="node55" href="faktur_pajak_pembelian.html" target="_top" title="faktur_pajak_pembelian" alt="" coords="1675,1547,1991,1635">
+<area shape="rect" id="node56" href="golongan_barang.html" target="_top" title="golongan_barang" alt="" coords="291,6036,543,6124">
+<area shape="rect" id="node57" href="golongan_darah.html" target="_top" title="golongan_darah" alt="" coords="297,6142,537,6230">
+<area shape="rect" id="node58" href="hari_libur.html" target="_top" title="hari_libur" alt="" coords="773,9814,949,9902">
+<area shape="rect" id="node59" href="tipe_hari_libur.html" target="_top" title="tipe_hari_libur" alt="" coords="305,9775,528,9863">
+<area shape="rect" id="node60" href="initial_account.html" target="_top" title="initial_account" alt="" coords="304,6419,529,6507">
+<area shape="rect" id="node61" href="insentif_noo.html" target="_top" title="insentif_noo" alt="" coords="315,6524,518,6612">
+<area shape="rect" id="node62" href="insentif_salesman.html" target="_top" title="insentif_salesman" alt="" coords="732,9919,991,10007">
+<area shape="rect" id="node63" href="target_penjualan.html" target="_top" title="target_penjualan" alt="" coords="292,10122,541,10210">
+<area shape="rect" id="node64" href="invoice.html" target="_top" title="invoice" alt="" coords="1133,2536,1587,4190">
+<area shape="rect" id="node65" href="no_faktur.html" target="_top" title="no_faktur" alt="" coords="329,2734,505,2822">
+<area shape="rect" id="node66" href="invoice_detail.html" target="_top" title="invoice_detail" alt="" coords="1705,1324,1961,1530">
+<area shape="rect" id="node67" href="invoice_persetujuan.html" target="_top" title="invoice_persetujuan" alt="" coords="1694,2539,1973,2686">
+<area shape="rect" id="node68" href="invoice_retur.html" target="_top" title="invoice_retur" alt="" coords="2198,2268,2409,2356">
+<area shape="rect" id="node69" href="pengajuan_retur_penjualan.html" target="_top" title="pengajuan_retur_penjualan" alt="" coords="1659,2347,2008,2435">
+<area shape="rect" id="node70" href="invoice_retur_detail.html" target="_top" title="invoice_retur_detail" alt="" coords="2616,1143,2892,1231">
+<area shape="rect" id="node71" href="stok_barang.html" target="_top" title="stok_barang" alt="" coords="1259,375,1461,463">
+<area shape="rect" id="node72" href="invoice_retur_persetujuan.html" target="_top" title="invoice_retur_persetujuan" alt="" coords="2585,2266,2923,2354">
+<area shape="rect" id="node73" href="invoice_revisi.html" target="_top" title="invoice_revisi" alt="" coords="309,7290,524,7378">
+<area shape="rect" id="node74" href="invoice_surat_jalan.html" target="_top" title="invoice_surat_jalan" alt="" coords="2619,4031,2889,4154">
+<area shape="rect" id="node75" href="jabatan.html" target="_top" title="jabatan" alt="" coords="338,7395,495,7483">
+<area shape="rect" id="node76" href="jenis_barang.html" target="_top" title="jenis_barang" alt="" coords="313,7500,521,7588">
+<area shape="rect" id="node77" href="jenis_identitas.html" target="_top" title="jenis_identitas" alt="" coords="304,7606,529,7694">
+<area shape="rect" id="node79" href="klaim_diskon_3.html" target="_top" title="klaim_diskon_3" alt="" coords="1718,2146,1949,2234">
+<area shape="rect" id="node80" href="klaim_loyalty.html" target="_top" title="klaim_loyalty" alt="" coords="1727,4232,1939,4320">
+<area shape="rect" id="node81" href="kontrak_loyalty.html" target="_top" title="kontrak_loyalty" alt="" coords="1243,4207,1477,4295">
+<area shape="rect" id="node88" href="program_loyalty.html" target="_top" title="program_loyalty" alt="" coords="296,3787,537,3875">
+<area shape="rect" id="node82" href="klaim_loyalty_detail.html" target="_top" title="klaim_loyalty_detail" alt="" coords="2165,3782,2441,3934">
+<area shape="rect" id="node83" href="klaim_program_pembelian.html" target="_top" title="klaim_program_pembelian" alt="" coords="691,5602,1031,5690">
+<area shape="rect" id="node84" href="program_pembelian.html" target="_top" title="program_pembelian" alt="" coords="278,5443,555,5531">
+<area shape="rect" id="node85" href="kode_e_report.html" target="_top" title="kode_e_report" alt="" coords="306,8276,527,8364">
+<area shape="rect" id="node86" href="kode_obat.html" target="_top" title="kode_obat" alt="" coords="325,8382,509,8470">
+<area shape="rect" id="node87" href="komisi_kolektor.html" target="_top" title="komisi_kolektor" alt="" coords="298,8487,535,8575">
+<area shape="rect" id="node89" href="mapping_customer.html" target="_top" title="mapping_customer" alt="" coords="1225,7880,1495,7968">
+<area shape="rect" id="node90" href="mapping_kolektor.html" target="_top" title="mapping_kolektor" alt="" coords="287,3996,546,4084">
+<area shape="rect" id="node91" href="mapping_kolektor_area.html" target="_top" title="mapping_kolektor_area" alt="" coords="706,4692,1017,4780">
+<area shape="rect" id="node92" href="mapping_salesman.html" target="_top" title="mapping_salesman" alt="" coords="282,4639,551,4727">
+<area shape="rect" id="node93" href="mapping_salesman_area.html" target="_top" title="mapping_salesman_area" alt="" coords="701,4798,1022,4886">
+<area shape="rect" id="node94" href="mapping_target_salesman.html" target="_top" title="mapping_target_salesman" alt="" coords="247,8955,586,9043">
+<area shape="rect" id="node95" href="mapping_target_salesman_detail.html" target="_top" title="mapping_target_salesman_detail" alt="" coords="1158,8392,1562,8480">
+<area shape="rect" id="node96" href="media.html" target="_top" title="media" alt="" coords="345,9060,488,9148">
+<area shape="rect" id="node97" href="mv_refresh_control.html" target="_top" title="mv_refresh_control" alt="" coords="281,9166,552,9254">
+<area shape="rect" id="node98" href="noo.html" target="_top" title="noo" alt="" coords="349,902,484,990">
+<area shape="rect" id="node99" href="noo_detail.html" target="_top" title="noo_detail" alt="" coords="769,866,953,954">
+<area shape="rect" id="node100" href="nota_retur_pajak.html" target="_top" title="nota_retur_pajak" alt="" coords="2179,708,2427,796">
+<area shape="rect" id="node101" href="retur_pembelian.html" target="_top" title="retur_pembelian" alt="" coords="1711,708,1955,796">
+<area shape="rect" id="node102" href="notification.html" target="_top" title="notification" alt="" coords="319,9512,515,9600">
+<area shape="rect" id="node103" href="ongkos.html" target="_top" title="ongkos" alt="" coords="340,5112,493,5200">
+<area shape="rect" id="node104" href="packing.html" target="_top" title="packing" alt="" coords="1268,8814,1452,8902">
+<area shape="rect" id="node105" href="payment_ap.html" target="_top" title="payment_ap" alt="" coords="1259,6339,1461,6427">
+<area shape="rect" id="node106" href="payment_ar.html" target="_top" title="payment_ar" alt="" coords="1261,8038,1459,8126">
+<area shape="rect" id="node107" href="proposal_ar.html" target="_top" title="proposal_ar" alt="" coords="763,7722,960,7810">
+<area shape="rect" id="node108" href="pegawai_account.html" target="_top" title="pegawai_account" alt="" coords="291,10016,542,10104">
+<area shape="rect" id="node109" href="pemindahan_barang.html" target="_top" title="pemindahan_barang" alt="" coords="275,347,558,435">
+<area shape="rect" id="node111" href="penerimaan_barang.html" target="_top" title="penerimaan_barang" alt="" coords="2165,10672,2442,10760">
+<area shape="rect" id="node112" href="penerimaan_pemindahan_barang.html" target="_top" title="penerimaan_pemindahan_barang" alt="" coords="658,971,1065,1059">
+<area shape="rect" id="node113" href="pengajuan_kenaikan_harga.html" target="_top" title="pengajuan_kenaikan_harga" alt="" coords="242,10347,591,10435">
+<area shape="rect" id="node114" href="pengajuan_pembayaran_ekspedisi.html" target="_top" title="pengajuan_pembayaran_ekspedisi" alt="" coords="653,4483,1070,4571">
+<area shape="rect" id="node115" href="pengajuan_pembayaran_ekspedisi_detail.html" target="_top" title="pengajuan_pembayaran_ekspedisi_detail" alt="" coords="1119,4731,1601,4819">
+<area shape="rect" id="node116" href="pengajuan_perubahan_limit.html" target="_top" title="pengajuan_perubahan_limit" alt="" coords="1183,10572,1537,10660">
+<area shape="rect" id="node117" href="pengajuan_retur_penjualan_detail.html" target="_top" title="pengajuan_retur_penjualan_detail" alt="" coords="2096,1658,2511,1746">
+<area shape="rect" id="node118" href="pengajuan_retur_penjualan_persetujuan.html" target="_top" title="pengajuan_retur_penjualan_persetujuan" alt="" coords="2065,2374,2541,2462">
+<area shape="rect" id="node119" href="penolakan_penawaran_tender.html" target="_top" title="penolakan_penawaran_tender" alt="" coords="1645,994,2021,1082">
+<area shape="rect" id="node121" href="printer_device.html" target="_top" title="printer_device" alt="" coords="305,1950,528,2038">
+<area shape="rect" id="node122" href="printer_paper.html" target="_top" title="printer_paper" alt="" coords="753,1855,969,1943">
+<area shape="rect" id="node123" href="program_penjualan.html" target="_top" title="program_penjualan" alt="" coords="281,10882,553,10970">
+<area shape="rect" id="node124" href="program_reward.html" target="_top" title="program_reward" alt="" coords="295,10987,539,11075">
+<area shape="rect" id="node125" href="proposal_ap.html" target="_top" title="proposal_ap" alt="" coords="1259,6739,1461,6827">
+<area shape="rect" id="node126" href="proposal_ap_detail.html" target="_top" title="proposal_ap_detail" alt="" coords="2171,6931,2436,7019">
+<area shape="rect" id="node127" href="proposal_ar_detail.html" target="_top" title="proposal_ar_detail" alt="" coords="1702,7802,1965,7890">
+<area shape="rect" id="node128" href="realisasi_stt.html" target="_top" title="realisasi_stt" alt="" coords="1733,4492,1934,4580">
+<area shape="rect" id="node129" href="surat_tanda_terima.html" target="_top" title="surat_tanda_terima" alt="" coords="1224,5407,1496,5495">
+<area shape="rect" id="node147" href="unit.html" target="_top" title="unit" alt="" coords="341,5600,493,5688">
+<area shape="rect" id="node130" href="rencana_kunjungan_salesman_detail.html" target="_top" title="rencana_kunjungan_salesman_detail" alt="" coords="1140,9235,1580,9323">
+<area shape="rect" id="node131" href="tipe_kunjungan.html" target="_top" title="tipe_kunjungan" alt="" coords="300,9618,533,9706">
+<area shape="rect" id="node132" href="retur_konsinyasi.html" target="_top" title="retur_konsinyasi" alt="" coords="2631,6175,2877,6263">
+<area shape="rect" id="node134" href="sales_order_log.html" target="_top" title="sales_order_log" alt="" coords="299,2628,534,2716">
+<area shape="rect" id="node135" href="setting_persetujuan.html" target="_top" title="setting_persetujuan" alt="" coords="277,1598,556,1686">
+<area shape="rect" id="node136" href="status_kerja.html" target="_top" title="status_kerja" alt="" coords="315,1703,518,1791">
+<area shape="rect" id="node137" href="status_pernikahan.html" target="_top" title="status_pernikahan" alt="" coords="285,1844,549,1932">
+<area shape="rect" id="node138" href="stok_awal_barang.html" target="_top" title="stok_awal_barang" alt="" coords="1231,1464,1489,1552">
+<area shape="rect" id="node139" href="stok_opname.html" target="_top" title="stok_opname" alt="" coords="1254,480,1466,568">
+<area shape="rect" id="node140" href="stok_opname_invoice.html" target="_top" title="stok_opname_invoice" alt="" coords="1215,9415,1505,9503">
+<area shape="rect" id="node141" href="stok_opname_invoice_area.html" target="_top" title="stok_opname_invoice_area" alt="" coords="1662,8779,2005,8867">
+<area shape="rect" id="node142" href="stok_opname_invoice_detail.html" target="_top" title="stok_opname_invoice_detail" alt="" coords="1656,10266,2011,10354">
+<area shape="rect" id="node143" href="tanda_terima_invoice.html" target="_top" title="tanda_terima_invoice" alt="" coords="1215,10266,1505,10354">
+<area shape="rect" id="node144" href="supplier_kontak.html" target="_top" title="supplier_kontak" alt="" coords="1241,1675,1479,1763">
+<area shape="rect" id="node145" href="surat_penolakan_pembelian.html" target="_top" title="surat_penolakan_pembelian" alt="" coords="2125,4335,2481,4423">
+<area shape="rect" id="node146" href="surat_penolakan_penjualan.html" target="_top" title="surat_penolakan_penjualan" alt="" coords="2129,7956,2478,8044">
+<area shape="rect" id="node148" href="surat_tanda_terima_detail.html" target="_top" title="surat_tanda_terima_detail" alt="" coords="2585,7616,2923,7704">
+<area shape="rect" id="node149" href="target_penjualan_detail.html" target="_top" title="target_penjualan_detail" alt="" coords="704,5146,1019,5234">
+<area shape="rect" id="node150" href="tipe_bpjs_kesehatan.html" target="_top" title="tipe_bpjs_kesehatan" alt="" coords="276,2839,557,2927">
+<area shape="rect" id="node151" href="titip_faktur.html" target="_top" title="titip_faktur" alt="" coords="320,3104,513,3192">
+<area shape="rect" id="node152" href="top_per_kota.html" target="_top" title="top_per_kota" alt="" coords="312,4102,521,4190">
+<area shape="rect" id="node153" href="uang_muka_pembelian.html" target="_top" title="uang_muka_pembelian" alt="" coords="2151,4783,2456,4871">
+<area shape="rect" id="node154" href="urut_kunjungan.html" target="_top" title="urut_kunjungan" alt="" coords="1241,8498,1479,8586">
+<area shape="rect" id="node155" href="urut_pengantaran.html" target="_top" title="urut_pengantaran" alt="" coords="1231,8603,1489,8691">
+<area shape="rect" id="node156" href="verifikasi_tagihan.html" target="_top" title="verifikasi_tagihan" alt="" coords="1231,4626,1489,4714">
+<area shape="rect" id="node157" href="verifikasi_tagihan_detail.html" target="_top" title="verifikasi_tagihan_detail" alt="" coords="1673,4598,1994,4686">
+</map>
+                                        <a name='diagram'><img id="twoimpliedDegreeImg" src="../diagrams/tables/invoice.implied2degrees.png" usemap="#twoDegreesRelationshipsDiagramImplied" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 7.0.2</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>

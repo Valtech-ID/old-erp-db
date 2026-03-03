@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>kelas_barang - neondb.public</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>neondb</b></a><span class="navbar-brand" style="padding-left: 0">.public</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>kelas_barang</h1><p><span id="recordNumber">5427</span> rows</p><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id_barang">id_barang</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="kelas_barang.id_barang references barang.id via kelas_barang_id_barang_barang_id_fk"><a href='barang.html'>barang</a><span class='relatedKey'>.id</span></td>
+                                                <td class="constraint detail">kelas_barang_id_barang_barang_id_fk</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id_kelas">id_kelas</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title=''></td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="kelas_barang.id_kelas references kelas.id via kelas_barang_id_kelas_kelas_id_fk"><a href='kelas.html'>kelas</a><span class='relatedKey'>.id</span></td>
+                                                <td class="constraint detail">kelas_barang_id_kelas_kelas_id_fk</td>
+                                                <td class="constraint detail"><span title='Cascade on delete:&#10;Deletion of parent deletes child'>C</span></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-sitemap"></i>
+                            <h3 id="Indexes" class="box-title">Indexes</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="indexes_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead>
+                                <tr>
+                                    <th>Constraint Name</th>
+                                    <th>Type</th>
+                                    <th>Sort</th>
+                                    <th>Column(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> kelas_barang_id_barang_id_kelas_pk</td>
+                                    <td>Primary key</td>
+                                    <td><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
+                                    <td>id_barang + id_kelas</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                    <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="kelas_barang.html" target="_top" title="kelas_barang" alt="" coords="329,276,579,404">
+<area shape="rect" id="node2" href="barang.html" target="_top" title="barang" alt="" coords="5,5,285,563">
+<area shape="rect" id="node3" href="kelas.html" target="_top" title="kelas" alt="" coords="77,580,213,703">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/kelas_barang.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="barang.html" target="_top" title="barang" alt="" coords="543,1734,823,2292">
+<area shape="rect" id="node2" href="pegawai.html" target="_top" title="pegawai" alt="" coords="5,2769,185,2857">
+<area shape="rect" id="node3" href="bentuk_persediaan.html" target="_top" title="bentuk_persediaan" alt="" coords="229,1830,499,1918">
+<area shape="rect" id="node4" href="brand.html" target="_top" title="brand" alt="" coords="291,1514,437,1602">
+<area shape="rect" id="node5" href="divisi.html" target="_top" title="divisi" alt="" coords="288,1936,440,2024">
+<area shape="rect" id="node6" href="grup.html" target="_top" title="grup" alt="" coords="291,2252,437,2340">
+<area shape="rect" id="node7" href="barang_kategori.html" target="_top" title="barang_kategori" alt="" coords="243,2041,485,2129">
+<area shape="rect" id="node8" href="logo_obat.html" target="_top" title="logo_obat" alt="" coords="275,1725,453,1813">
+<area shape="rect" id="node9" href="pabrik.html" target="_top" title="pabrik" alt="" coords="283,2425,445,2513">
+<area shape="rect" id="node10" href="rak_barang.html" target="_top" title="rak_barang" alt="" coords="267,2689,461,2777">
+<area shape="rect" id="node11" href="satuan.html" target="_top" title="satuan" alt="" coords="289,636,439,724">
+<area shape="rect" id="node12" href="suhu.html" target="_top" title="suhu" alt="" coords="299,2146,429,2234">
+<area shape="rect" id="node13" href="zat_aktif.html" target="_top" title="zat_aktif" alt="" coords="281,1620,447,1708">
+<area shape="rect" id="node14" href="barang_dekat_ed_detail.html" target="_top" title="barang_dekat_ed_detail" alt="" coords="1368,2582,1683,2670">
+<area shape="rect" id="node15" href="stok_barang.html" target="_top" title="stok_barang" alt="" coords="985,2582,1188,2670">
+<area shape="rect" id="node16" href="barang_harga.html" target="_top" title="barang_harga" alt="" coords="978,2934,1195,3022">
+<area shape="rect" id="node17" href="barang_satuan.html" target="_top" title="barang_satuan" alt="" coords="973,820,1201,908">
+<area shape="rect" id="node18" href="barang_supplier.html" target="_top" title="barang_supplier" alt="" coords="966,3040,1207,3128">
+<area shape="rect" id="node19" href="berita_acara.html" target="_top" title="berita_acara" alt="" coords="985,925,1189,1013">
+<area shape="rect" id="node20" href="bukti_barang_masuk_detail.html" target="_top" title="bukti_barang_masuk_detail" alt="" coords="1351,1490,1700,1578">
+<area shape="rect" id="node21" href="checking_detail.html" target="_top" title="checking_detail" alt="" coords="1408,1910,1643,1998">
+<area shape="rect" id="node22" href="estimasi_order_detail.html" target="_top" title="estimasi_order_detail" alt="" coords="941,1030,1233,1118">
+<area shape="rect" id="node23" href="invoice_detail.html" target="_top" title="invoice_detail" alt="" coords="978,1136,1195,1224">
+<area shape="rect" id="node24" href="invoice_retur_detail.html" target="_top" title="invoice_retur_detail" alt="" coords="1387,2450,1663,2538">
+<area shape="rect" id="node25" href="kelas_barang.html" target="_top" title="kelas_barang" alt="" coords="962,3145,1211,3273">
+<area shape="rect" id="node26" href="kelas.html" target="_top" title="kelas" alt="" coords="615,3177,751,3300">
+<area shape="rect" id="node27" href="ketentuan_retur_barang.html" target="_top" title="ketentuan_retur_barang" alt="" coords="927,1984,1247,2072">
+<area shape="rect" id="node28" href="nota_retur_pajak_detail.html" target="_top" title="nota_retur_pajak_detail" alt="" coords="931,2089,1243,2177">
+<area shape="rect" id="node29" href="pemindahan_barang_detail.html" target="_top" title="pemindahan_barang_detail" alt="" coords="1352,1242,1699,1330">
+<area shape="rect" id="node30" href="penawaran_tender_detail.html" target="_top" title="penawaran_tender_detail" alt="" coords="921,2194,1252,2282">
+<area shape="rect" id="node31" href="penerimaan_barang_detail.html" target="_top" title="penerimaan_barang_detail" alt="" coords="915,80,1258,168">
+<area shape="rect" id="node32" href="pengajuan_kenaikan_harga_detail.html" target="_top" title="pengajuan_kenaikan_harga_detail" alt="" coords="880,2336,1293,2424">
+<area shape="rect" id="node33" href="pengajuan_retur_penjualan_detail.html" target="_top" title="pengajuan_retur_penjualan_detail" alt="" coords="879,398,1294,486">
+<area shape="rect" id="node34" href="penolakan_penawaran_tender_detail.html" target="_top" title="penolakan_penawaran_tender_detail" alt="" coords="867,2477,1307,2565">
+<area shape="rect" id="node35" href="permintaan_penawaran_detail.html" target="_top" title="permintaan_penawaran_detail" alt="" coords="897,504,1276,592">
+<area shape="rect" id="node36" href="retur_pembelian_detail.html" target="_top" title="retur_pembelian_detail" alt="" coords="933,1526,1241,1614">
+<area shape="rect" id="node37" href="sales_order_detail.html" target="_top" title="sales_order_detail" alt="" coords="957,221,1217,309">
+<area shape="rect" id="node38" href="sales_order_hpp.html" target="_top" title="sales_order_hpp" alt="" coords="1405,1348,1646,1436">
+<area shape="rect" id="node39" href="stok_awal_barang.html" target="_top" title="stok_awal_barang" alt="" coords="958,2724,1215,2812">
+<area shape="rect" id="node40" href="stok_harian.html" target="_top" title="stok_harian" alt="" coords="989,1632,1185,1720">
+<area shape="rect" id="node41" href="stok_opname.html" target="_top" title="stok_opname" alt="" coords="981,2829,1193,2917">
+<area shape="rect" id="node42" href="stok_opname_detail.html" target="_top" title="stok_opname_detail" alt="" coords="948,1737,1225,1825">
+<area shape="rect" id="node43" href="stok_opname_stok_barang.html" target="_top" title="stok_opname_stok_barang" alt="" coords="1355,2317,1696,2405">
+<area shape="rect" id="node44" href="stok_value.html" target="_top" title="stok_value" alt="" coords="993,1842,1180,1930">
+<area shape="rect" id="node45" href="surat_jalan_detail.html" target="_top" title="surat_jalan_detail" alt="" coords="959,609,1215,697">
+<area shape="rect" id="node46" href="surat_penolakan_pembelian_detail.html" target="_top" title="surat_penolakan_pembelian_detail" alt="" coords="877,714,1297,802">
+<area shape="rect" id="node47" href="surat_penolakan_penjualan_detail.html" target="_top" title="surat_penolakan_penjualan_detail" alt="" coords="1744,1348,2159,1436">
+<area shape="rect" id="node48" href="surat_pesanan_detail.html" target="_top" title="surat_pesanan_detail" alt="" coords="941,1241,1232,1329">
+</map>
+                                        <a name='diagram'><img id="twodegreesDegreeImg" src="../diagrams/tables/kelas_barang.2degrees.png" usemap="#twoDegreesRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 7.0.2</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>
